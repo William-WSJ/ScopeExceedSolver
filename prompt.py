@@ -18,7 +18,7 @@ direct_answer_with_limitations_prompt = PromptTemplate(
     """
 )
 
-generate_idea_and_solution_prompt = PromptTemplate(
+generate_idea_prompt = PromptTemplate(
     input_variable=["question", "idea"],
     template="""
         请根据我的解题思路解决以下问题：
@@ -29,7 +29,7 @@ generate_idea_and_solution_prompt = PromptTemplate(
     """
 )
 
-generate_idea_with_limitations_and_solution_prompt = PromptTemplate(
+generate_idea_with_limitations_prompt = PromptTemplate(
     input_variable=["question", "idea", "limitations"],
     template="""
         请根据我的解题思路解决以下问题：
@@ -41,5 +41,35 @@ generate_idea_with_limitations_and_solution_prompt = PromptTemplate(
         请注意：
         1. 如果我的解题思路有明显的错误，请纠正后再解答。
         2. 如果我没有指明严禁出现的方法，请遵循第一条规则解答。
+    """
+)
+
+answer_check_prompt = PromptTemplate(
+    input_variable=["question", "answer", "solution"],
+    template="""
+        请帮我判断这个问题的答案是否与我给出的答案一致
+
+        问题：{question}\n
+        正确答案：{answer}\n
+        我的答案：{solution}
+
+        注意：正确答案和我的答案可能在形式上不一样，你需要仔细辨别后再给出回答。
+        请不要返回任何其他内容，只返回True或者False即可。True表示答案一致，False表示答案不一致。
+    """
+)
+
+exceeds_scope_check_prompt = PromptTemplate(
+    input_variables=["solution", "limitations"],
+    template="""
+        请帮我检查一下我的解答过程中是否出现了超纲现象，可能出现的超纲现象我都写在列表中了。
+        解答过程：{solution}\n
+        超纲列表：{limitations}\n
+
+        要求：
+        - 请只返回True和False，True表示解答过程中出现了超纲列表的内容或方法，False表示没有出现。
+        - 请仔细检查我的解答过程，但凡出现一点超纲列表中的内容都算超纲。
+        - 如果超纲列表是空列表，则请返回False
+
+        再三强调，不要返回任何其他内容，只返回True或False即可，True和False的定义在上面有说明。
     """
 )
