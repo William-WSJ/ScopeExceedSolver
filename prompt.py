@@ -38,9 +38,7 @@ generate_idea_with_limitations_prompt = PromptTemplate(
         {idea}\n
         你的解答过程中严禁出现以下内容或方法：
         {limitations}\n
-        请注意：
-        1. 如果我的解题思路有明显的错误，请纠正后再解答。
-        2. 如果我没有指明严禁出现的方法，请遵循第一条规则解答。
+        请注意，如果我的解题思路有明显的错误，请纠正后再解答。
     """
 )
 
@@ -68,7 +66,6 @@ exceeds_scope_check_prompt = PromptTemplate(
         要求：
         - 请只返回True和False，True表示解答过程中出现了超纲列表的内容或方法，False表示没有出现。
         - 请仔细检查我的解答过程，但凡出现一点超纲列表中的内容都算超纲。
-        - 如果超纲列表是空列表，则请返回False
 
         再三强调，不要返回任何其他内容，只返回True或False即可，True和False的定义在上面有说明。
     """
