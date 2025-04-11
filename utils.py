@@ -23,15 +23,13 @@ def write_checkpoint(mode, count, correct, relevant):
 def convert_to_jsonl(input_file, output_file):
     def prepare_content(data):
         content_template = (
-            "请根据我的解题思路解决以下问题：\n\n"
-            "{question}\n\n"
-            "我的解题思路如下：\n\n"
-            "{thoughts}\n\n"
-            "你的解答过程中严禁出现以下内容或方法：\n\n"
-            "{cautions}\n\n"
-            "请注意：\n"
-            "1. 如果我的解题思路有明显的错误，请纠正后再解答。\n"
-            "2. 如果我没有指明严禁出现的方法，请遵循第一条规则解答。"
+            "请根据我的解题思路解决以下问题：\n"
+            "{question}\n"
+            "我的解题思路如下：\n"
+            "{idea}\n"
+            "你的解答过程中严禁出现以下内容或方法：\n"
+            "{limitations}\n"
+            "请注意，如果我的解题思路有明显的错误，请纠正后再解答。"
         )
 
         # 将列表中的元素合并成字符串
@@ -41,8 +39,10 @@ def convert_to_jsonl(input_file, output_file):
         # 构建最终的content文本
         content = content_template.format(
             question=data["question"],
-            thoughts=data["thoughts"],
-            cautions=join_list_to_string(data.get("grade_cautions", []))
+            idea=data['thoughts_mini_finetuned'],
+            # answer=data["answer"],
+            # solution=data["solution"],
+            limitations=join_list_to_string(data.get("grade_cautions", []))
         )
         return content
 
@@ -53,7 +53,7 @@ def convert_to_jsonl(input_file, output_file):
             "method": "POST",
             "url": "/v1/chat/completions",
             "body": {
-                "model": "gpt-4o",
+                "model": "deepseek-v3",
                 "messages": [
                     {"role": "system", "content": "You are a helpful assistant."},
                     {"role": "user", "content": content}
@@ -72,11 +72,10 @@ def convert_to_jsonl(input_file, output_file):
 
     # 打开输出文件准备写入
     with open(output_file, 'w', encoding='utf-8') as outfile:
-        for index, data in enumerate(data_list, start=1):  # 从1开始编号
+        for data in data_list:  # 从1开始编号
+            # print(data)
             json_obj = create_json_obj(data)
-            json_obj["custom_id"] = f"request-{index}"  # 更新custom_id
+            json_obj["custom_id"] = f"request-{data['id']}"  # 更新custom_id
             json_line = json.dumps(json_obj, ensure_ascii=False)
             outfile.write(json_line + '\n')
-
-# 使用示例
-# convert_to_jsonl('merged_output_set_4298.json', 'output.jsonl')
+            # break
