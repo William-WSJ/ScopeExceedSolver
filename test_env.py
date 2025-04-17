@@ -13,7 +13,7 @@ parser = StrOutputParser()
 test_template = PromptTemplate(
     input_variables=[],
     template="""
-        你是谁？
+        Who are you?
     """
 )
 test_chain = test_template | llm | parser
