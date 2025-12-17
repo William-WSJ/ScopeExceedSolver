@@ -21,7 +21,6 @@ def write_checkpoint(mode, count, correct, relevant):
     with open(checkpoint_file, "w") as f:
         f.write(f"{count},{correct},{relevant}")
 
-
 # Batch inference convert json to jsonl
 def convert_to_jsonl(input_file, output_file):
     def prepare_content(data):
@@ -616,5 +615,117 @@ def calculate_score_averages(model_splits_dir="experiment/model_splits"):
     # 同时返回原始分数和转换后分数
     return raw_df, ranked_df
 # 示例调用
-score = calculate_score_averages()
+# score = calculate_score_averages()
 # time_stats = calculate_time_averages()
+
+def count_syllabus_osr_items():
+    """
+    统计syllabus_results目录下多个response_syllabus文件中
+    grade=3和4，且osr=true的所有item，按照knowledge统计
+    """
+    # 定义文件路径
+    file_paths = [
+        "experiment/syllabus_results/response_syllabus_1.json",
+        "experiment/syllabus_results/response_syllabus_2.json",
+        "experiment/syllabus_results/response_syllabus_3.json",
+        "experiment/syllabus_results/response_syllabus_4.json",
+        "experiment/syllabus_results/response_syllabus_13.json",
+        "experiment/syllabus_results/response_syllabus_14.json"
+    ]
+    
+    # 读取所有文件
+    all_data_groups = []
+    for file_path in file_paths:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            all_data_groups.append(data)
+    
+    # 合并数据，分为四组
+    group1_data = all_data_groups[0] + all_data_groups[1]  # 文件1-2
+    group2_data = all_data_groups[2] + all_data_groups[3]  # 文件3-4
+    group4_data = all_data_groups[6] + all_data_groups[7]  # 文件13-14
+    
+    # 筛选条件: grade=3或4
+    filtered_group1 = [item for item in group1_data if item.get('grade') in [3, 4]]
+    filtered_group2 = [item for item in group2_data if item.get('grade') in [3, 4]]
+    filtered_group4 = [item for item in group4_data if item.get('grade') in [3, 4]]
+    
+    # 按grade和knowledge统计各组文件
+    def calculate_stats(data_group):
+        stats = {}
+        for item in data_group:
+            grade = item.get('grade')
+            knowledge = item.get('knowledge', 'Unknown')
+            osr = item.get('osr') == 'True'
+            
+            key = (grade, knowledge)
+            if key not in stats:
+                stats[key] = {
+                    'osr_true_count': 0,
+                    'total_count': 0
+                }
+            
+            if osr:
+                stats[key]['osr_true_count'] += 1
+            stats[key]['total_count'] += 1
+        return stats
+    
+    stats_group1 = calculate_stats(filtered_group1)
+    stats_group2 = calculate_stats(filtered_group2)
+    stats_group4 = calculate_stats(filtered_group4)
+    
+    # 转换为列表并排序（以group1的OSR=True占比为准）
+    results = []
+    for (grade, knowledge), data in stats_group1.items():
+        # 获取其他组文件中对应知识点的OSR=True数量
+        osr_true_count_group2 = 0
+        osr_true_count_group3 = 0
+        osr_true_count_group4 = 0
+        
+        if (grade, knowledge) in stats_group2:
+            osr_true_count_group2 = stats_group2[(grade, knowledge)]['osr_true_count']
+            
+        if (grade, knowledge) in stats_group4:
+            osr_true_count_group4 = stats_group4[(grade, knowledge)]['osr_true_count']
+            
+        # 计算占比用于排序
+        ratio = data['osr_true_count'] / data['total_count'] if data['total_count'] > 0 else 0
+            
+        results.append({
+            'grade': grade,
+            'knowledge': knowledge,
+            'osr_true_count': data['osr_true_count'],
+            'total_count': data['total_count'],
+            'osr_true_count_group2': osr_true_count_group2,
+            'osr_true_count_group3': osr_true_count_group3,
+            'osr_true_count_group4': osr_true_count_group4,
+            'ratio': ratio
+        })
+    
+    # 按osr_true占比从大到小排序
+    results.sort(key=lambda x: x['ratio'], reverse=True)
+    
+    # 输出统计结果
+    print("=" * 150)
+    print("Syllabus结果统计 (grade=3或4) - 按OSR=True占比排序")
+    print("=" * 150)
+    print(f"{'Grade':<8} {'Knowledge':<35} {'OSR=True':<12} {'Total':<10} {'OSR=True(3/4)':<15} {'OSR=True(9/10)':<15} {'OSR=True(13/14)':<15}")
+    print("-" * 150)
+    
+    for result in results:
+        print(f"{result['grade']:<8} {result['knowledge']:<35} {result['osr_true_count']:<12} {result['total_count']:<10} {result['osr_true_count_group2']:<15} {result['osr_true_count_group3']:<15} {result['osr_true_count_group4']:<15}")
+    
+    print("=" * 150)
+
+# count_syllabus_osr_items()
+
+def extract():
+    with open("dataset/syllabus_check_2395_latest.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
+    new_data = []
+    for item in data:
+        if item["knowledge"] == "鸡兔同笼问题" or item["knowledge"] == "同增同减问题" or item["knowledge"] == "倍的概念及其应用":
+            new_data.append(item)
+    with open("experiment/further_analysis/new_data.json", "w", encoding="utf-8") as f:
+        json.dump(new_data, f, ensure_ascii=False, indent=4)
+extract()

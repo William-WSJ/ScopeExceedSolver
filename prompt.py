@@ -91,3 +91,18 @@ idea_checklist = PromptTemplate(
         请严格返回JSON字符串,包含三个属性："思路评分":n,"关键点":n,"引导力":n，禁止任何额外内容
     """
 )
+
+generate_idea_with_limitations_and_knowledge_prompt = PromptTemplate(
+    input_variable=["question", "idea", "limitations", "knowledge"],
+    template="""
+        请根据我的解题思路以及知识库中的解题模板解决以下问题：
+        {question}\n
+        我的解题思路如下：
+        {idea}\n
+        知识库模板如下：
+        {knowledge}\n
+        你的解答过程中严禁出现以下内容或方法：
+        {limitations}\n
+        请注意，如果我的解题思路有明显的错误，请纠正后再解答。
+    """
+)
