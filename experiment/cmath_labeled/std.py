@@ -3,7 +3,7 @@ import json
 from collections import defaultdict
 
 # ===================== 核心配置（仅需修改这一行） =====================
-JSON_FILE_PATH = "./response_syllabus_16.json"  # 替换为你的JSON文件绝对/相对路径
+JSON_FILE_PATH = "./response_cmath_labeled_16.json"  # 替换为你的JSON文件绝对/相对路径
 # =====================================================================
 
 # 步骤1：读取JSON文件（兼容2种常见格式：JSON数组 / 每行1个JSON对象）
