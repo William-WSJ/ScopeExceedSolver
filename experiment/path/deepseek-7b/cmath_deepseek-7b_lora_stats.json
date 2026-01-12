@@ -1,0 +1,8 @@
+{
+  "average_generation_time_seconds": 4.123223311106364,
+  "input_file": "cmath_label_latest.json",
+  "output_file": "cmath_deepseek-7b_lora.json",
+  "api_url": "http://127.0.0.1:8000",
+  "total_items_processed": 600,
+  "successful_items": 600
+}

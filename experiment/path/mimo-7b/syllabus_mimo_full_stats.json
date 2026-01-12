@@ -1,0 +1,8 @@
+{
+  "average_generation_time_seconds": 5.356976338368617,
+  "input_file": "syllabus_check_2395_latest.json",
+  "output_file": "syllabus_mimo_full.json",
+  "api_url": "http://127.0.0.1:8000",
+  "total_items_processed": 2395,
+  "successful_items": 2395
+}
