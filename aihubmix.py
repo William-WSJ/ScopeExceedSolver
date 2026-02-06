@@ -1,7 +1,7 @@
 import openai
 
 client = openai.OpenAI(
-  api_key="sk-ZigFSx3S8cR93I365d0cDcDb44104fB2B633D856E2D45d12",  # 换成你在 AiHubMix 生成的密钥
+  api_key="",  # 换成你在 AiHubMix 生成的密钥
   base_url="https://aihubmix.com/v1"
 )
 
