@@ -1,9 +1,7 @@
 ```markdown
 # Scope Exceed Solver
 
-This repository contains scripts for testing, evaluating, and generating solutions for math problems using various AI models.
-
-<iframe src="./figures/agent-structure-en-v1.pdf" width="100%" height="700"></iframe>
+This repository contains scripts for testing, evaluating, and generating solutions for the article: Mitigating Out-of-Syllabus Responses in LLMs: A Staged Problem-Solving Strategy for Primary Education.
 
 ## Features
 
