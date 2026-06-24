@@ -57,12 +57,8 @@ Make sure to configure the following in your environment:
 
 ## Requirements
 
-- Python 3.x
-- Required packages (see requirements.txt)
 - Ollama for local model serving
 - Llama Factory for model deployment
 
 ## License
-
-[Add your license information here]
 ```
