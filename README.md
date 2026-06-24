@@ -1,4 +1,3 @@
-```markdown
 # Scope Exceed Solver
 
 This repository contains scripts for testing, evaluating, and generating solutions for the article: Mitigating Out-of-Syllabus Responses in LLMs: A Staged Problem-Solving Strategy for Primary Education.
