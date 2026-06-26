@@ -1,8 +1,6 @@
 # Scope Exceed Solver
 
-This repository contains scripts for testing, evaluating, and generating solutions for math problems using various AI models.
-
-<iframe src="./figures/agent-structure-en-v1.pdf" width="100%" height="700"></iframe>
+This repository contains scripts for testing, evaluating, and generating solutions for the article: Staged problem solving improves curriculum alignment of large language models for primary mathematics education
 
 ## Features
 
