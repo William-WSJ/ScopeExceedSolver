@@ -3,8 +3,6 @@
 
 This repository contains scripts for testing, evaluating, and generating solutions for math problems using various AI models.
 
-<iframe src="./figures/agent-structure-en-v1.pdf" width="100%" height="700"></iframe>
-
 ## Features
 
 - Test results generation using DeepSeek-v3.2

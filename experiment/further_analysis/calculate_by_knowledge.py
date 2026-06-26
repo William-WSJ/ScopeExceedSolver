@@ -40,10 +40,6 @@ def analyze_math_data(json_list):
     return knowledge_stats.sort_values(by='OSR_Rate', ascending=False)
 
 # 使用方式
-# json_list = ["./syllabus_4o-mini_finetuned_deepseek_v3_2_subset.json",
-#              "./syllabus_deepseek-7b_full_deepseek_v3_2_subset.json",
-#              "./syllabus_mimo-7b_full_deepseek_v3_2_subset.json",
-#              "./syllabus_qwen-7b_full_deepseek_v3_2_subset.json"]
 json_list = ["../baseline-result/syllabus_baseline_deepseek_v3_2_direct.json"]
 # json_list = ["../baseline-result/syllabus_baseline_deepseek_v3_2_with_limitations.json"]
 stats = analyze_math_data(json_list)

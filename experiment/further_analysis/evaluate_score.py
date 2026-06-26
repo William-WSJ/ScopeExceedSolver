@@ -5,25 +5,25 @@ from pathlib import Path
 from openai import OpenAI
 from typing import Dict, List, Optional
 
-# ==================== 配置区 ====================
+# ==================== Configuration Area ====================
 BASE_URL = "http://localhost:8000/v1"
 API_KEY = "EMPTY"
 MODEL_PATH = "/root/autodl-tmp/models/openai-mirror/gpt-oss-20b"
 
-INPUT_DIR = "/root/autodl-tmp/subset"    # 待处理 JSON 文件夹
-OUTPUT_DIR = "/root/autodl-tmp/process"  # 结果存放文件夹
+INPUT_DIR = "/root/autodl-tmp/subset"    # Folder path for pending JSON files
+OUTPUT_DIR = "/root/autodl-tmp/process"  # Folder to store output results
 TIMEOUT = 120.0                
 MAX_RETRIES = 3               
-# ==============================================
+# ============================================================
 
 client = OpenAI(base_url=BASE_URL, api_key=API_KEY)
 
 def build_idea_checklist_prompt(question: str, thought: str, solution: str, acc: bool) -> str:
     """
-    全量 22 子项 Prompt：
-    1. 严格映射 LaTeX 22 个子项的文字描述。
-    2. 引入 acc 字段辅助判断 solution 正确性。
-    3. 明确以 solution 为基准评估 thought。
+    Full prompt covering all 22 sub-items:
+    1. Strictly map text descriptions of the 22 LaTeX evaluation sub-items.
+    2. Utilize the acc field to assist judging the correctness of the solution.
+    3. Evaluate the thought based on the solution as reference standard.
     """
     acc_status = "正确" if acc else "错误"
     
@@ -82,7 +82,7 @@ def build_idea_checklist_prompt(question: str, thought: str, solution: str, acc:
 }}"""
 
 def call_model_full(prompt: str) -> str:
-    """稳健的非流式获取函数：处理 NoneType 并打印完整响应"""
+    """Robust non-streaming request function: handle NoneType and print complete response"""
     try:
         response = client.chat.completions.create(
             model=MODEL_PATH,
@@ -92,27 +92,27 @@ def call_model_full(prompt: str) -> str:
             stream=False,
             timeout=TIMEOUT
         )
-        # ==================== 格式化输出区 ====================
+        # ==================== Format Print Zone ====================
         print("\n" + "="*30 + " API RESPONSE DEBUG " + "="*30)
-        # 使用 model_dump_json 格式化打印整个响应对象
+        # Use model_dump_json to format and print full response object
         print(response.model_dump_json(indent=2))
         print("="*80)
-        # ======================================================
+        # ==========================================================
         content = response.choices[0].message.content
         # print(content)
         if content is None:
             return ""
-        # 实时打印模型给出的原始内容
+        # Print raw model output in real time
         print(f"\n[Model Response]:\n{content}")
         return content.strip()
     except Exception as e:
-        print(f"\n   ⚠️ API调用异常: {e}")
+        print(f"\n   ⚠️ API request exception occurred: {e}")
         return ""
 
 def process_file(file_path: Path):
-    """串行处理单个 JSON 文件：直接保存模型原始回答"""
+    """Process single JSON file sequentially: save raw model output directly"""
     output_path = Path(OUTPUT_DIR) / f"{file_path.stem}_process.json"
-    print(f"\n📂 开始处理文件: {file_path.name}")
+    print(f"\n📂 Start processing file: {file_path.name}")
     
     with open(file_path, 'r', encoding='utf-8') as f:
         items = json.load(f)
@@ -122,7 +122,7 @@ def process_file(file_path: Path):
         print(f"[{idx}/{len(items)}] ID: {item.get('id')} ", end="", flush=True)
         
         raw_ans = ""
-        # 3 次重试机制
+        # 3-time retry mechanism
         for attempt in range(1, MAX_RETRIES + 1):
             prompt = build_idea_checklist_prompt(
                 question=item.get('question', ''),
@@ -139,34 +139,34 @@ def process_file(file_path: Path):
                 print(f"-> R{attempt}", end=" ")
                 time.sleep(1)
 
-        # 深度拷贝原数据，并追加模型原始回答字段
+        # Deep copy original data and append raw model response field
         item_copy = item.copy()
         item_copy["raw_model_response"] = raw_ans
         results.append(item_copy)
         print() 
 
-    # 完成一个文件后立即保存全量数据
+    # Save full dataset immediately after finishing one file
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
-    print(f"✅ 文件 {file_path.name} 处理完毕并已保存。")
+    print(f"✅ File {file_path.name} processed and saved successfully.")
 
 def main():
-    # 路径初始化
+    # Initialize directory paths
     in_p = Path(INPUT_DIR)
     out_p = Path(OUTPUT_DIR)
     out_p.mkdir(parents=True, exist_ok=True)
     
-    # 串行遍历：a.json -> b.json -> c.json
+    # Sequential traversal: a.json -> b.json -> c.json
     json_files = sorted([f for f in in_p.glob("*.json") if "_process" not in f.name])
     
     if not json_files:
-        print(f"在 {INPUT_DIR} 没找到 JSON 文件。")
+        print(f"No JSON files found under directory {INPUT_DIR}.")
         return
 
     for f in json_files:
         process_file(f)
 
-    print("\n" + "="*50 + "\n🎊 所有文件处理完毕！\n" + "="*50)
+    print("\n" + "="*50 + "\n🎊 All files processing completed!\n" + "="*50)
 
 if __name__ == "__main__":
     main()

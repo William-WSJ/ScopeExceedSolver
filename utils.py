@@ -21,7 +21,7 @@ def write_checkpoint(mode, count, correct, relevant):
     with open(checkpoint_file, "w") as f:
         f.write(f"{count},{correct},{relevant}")
 
-# Batch inference convert json to jsonl
+# Batch inference: convert json file to jsonl format
 def convert_to_jsonl(input_file, output_file):
     def prepare_content(data):
         content_template = (
@@ -29,16 +29,14 @@ def convert_to_jsonl(input_file, output_file):
             "{question}\n"
             "我的解题思路如下：\n"
             "{idea}\n"
-            # "你的解答过程中严禁出现以下内容或方法：\n"
-            # "{limitations}\n"
             "请注意，如果我的解题思路有明显的错误，请纠正后再解答。"
         )
 
-        # 将列表中的元素合并成字符串
+        # Merge all elements in the list into one string
         def join_list_to_string(lst):
             return '\n'.join(lst)
 
-        # 构建最终的content文本
+        # Generate the final content text
         content = content_template.format(
             question=data["question"],
             idea=data['thoughts_mini_finetuned'],
@@ -64,20 +62,20 @@ def convert_to_jsonl(input_file, output_file):
             }
         }
 
-    # 读取输入文件
+    # Read input file
     with open(input_file, 'r', encoding='utf-8') as infile:
         data_list = json.load(infile)
 
-    # 检查是否是列表，如果不是则包装成列表
+    # Wrap single object into a list if input is not an array
     if not isinstance(data_list, list):
         data_list = [data_list]
 
-    # 打开输出文件准备写入
+    # Open output file for writing
     with open(output_file, 'w', encoding='utf-8') as outfile:
-        for data in data_list:  # 从1开始编号
+        for data in data_list:  # Numbering starts from 1
             # print(data)
             json_obj = create_json_obj(data)
-            json_obj["custom_id"] = f"request-{data['id']}"  # 更新custom_id
+            json_obj["custom_id"] = f"request-{data['id']}"  # Update custom_id field
             json_line = json.dumps(json_obj, ensure_ascii=False)
             outfile.write(json_line + '\n')
             # break
@@ -87,8 +85,10 @@ def extract():
         data = json.load(f)
     new_data = []
     for item in data:
+        # Filter items with specified knowledge points
         if item["knowledge"] == "鸡兔同笼问题" or item["knowledge"] == "同增同减问题" or item["knowledge"] == "倍的概念及其应用":
             new_data.append(item)
+    # Save filtered dataset to target path
     with open("experiment/further_analysis/new_data.json", "w", encoding="utf-8") as f:
         json.dump(new_data, f, ensure_ascii=False, indent=4)
 extract()

@@ -5,23 +5,23 @@ import os
 import openai
 from typing import List, Dict, Any, Tuple
 
-# ====== 全局配置区 (在这里设置所有参数) ======
-API_KEY = ""  # 替换为您的实际API密钥
+# ====== Global Configuration Section (Set all parameters here) ======
+API_KEY = ""  # Replace with your actual API key
 BASE_URL = "https://aihubmix.com/v1"
 MODEL = "gemini-3-flash-preview"
 MAX_TOKENS = 1024
-REQUEST_DELAY = 0.5  # 请求间隔时间(秒)
-# ====== 全局配置区结束 ======
+REQUEST_DELAY = 0.5  # Request interval in seconds
+# ====== End of Global Configuration Section ======
 
 def create_client():
-    """创建OpenAI客户端，使用全局配置"""
+    """Create OpenAI client with global configuration"""
     return openai.OpenAI(
         api_key=API_KEY,
         base_url=BASE_URL.strip()
     )
 
 def call_gemini_api(client: openai.OpenAI, prompt: str) -> Tuple[str, float]:
-    """调用Gemini API获取解答，并实时打印结果"""
+    """Call Gemini API to get answer and print response in real time"""
     start_time = time.time()
     try:
         response = client.chat.completions.create(
@@ -30,21 +30,21 @@ def call_gemini_api(client: openai.OpenAI, prompt: str) -> Tuple[str, float]:
             max_completion_tokens=MAX_TOKENS,
         )
         content = response.choices[0].message.content
-        print(f"\n[Gemini 回复]:\n{content}")
+        print(f"\n[Gemini Response]:\n{content}")
         duration = time.time() - start_time
         return content, duration
     except Exception as e:
-        print(f"API请求失败: {str(e)}")
+        print(f"API request failed: {str(e)}")
         return "", time.time() - start_time
 
 def build_thought_limitations_prompt(item: Dict) -> str:
-    """根据思路、问题和限制构建 Prompt"""
+    """Construct prompt based on question, reasoning and restrictions"""
     question = item.get("question", "")
     idea = item.get("thought", "")
     
-    # 优先级：cautions > grade_cautions
+    # Priority: cautions > grade_cautions
     limitations_list = item.get("grade_cautions", [])
-    limitations_str = "\n".join([f"- {limit}" for limit in limitations_list]) if limitations_list else "无"
+    limitations_str = "\n".join([f"- {limit}" for limit in limitations_list]) if limitations_list else "None"
 
     return f"""
 请根据我的解题思路解决以下问题：
@@ -60,7 +60,7 @@ def build_thought_limitations_prompt(item: Dict) -> str:
 """
 
 def load_checkpoint(checkpoint_path: str) -> int:
-    """加载checkpoint"""
+    """Load processing checkpoint"""
     if os.path.exists(checkpoint_path):
         try:
             with open(checkpoint_path, 'r', encoding='utf-8') as f:
@@ -70,17 +70,17 @@ def load_checkpoint(checkpoint_path: str) -> int:
     return 0
 
 def save_checkpoint(checkpoint_path: str, processed_count: int):
-    """保存checkpoint"""
+    """Save processing checkpoint"""
     with open(checkpoint_path, 'w', encoding='utf-8') as f:
         json.dump({"processed_count": processed_count}, f)
 
 def save_results(output_path: str, results: List[Dict]):
-    """保存结果到文件"""
+    """Save output results to file"""
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
 
 def process_dataset(input_path: str, output_path: str, checkpoint_path: str):
-    """处理数据集逻辑"""
+    """Core logic for dataset processing"""
     client = create_client()
     
     with open(input_path, 'r', encoding='utf-8') as f:
@@ -91,7 +91,7 @@ def process_dataset(input_path: str, output_path: str, checkpoint_path: str):
     
     processed_count = load_checkpoint(checkpoint_path)
     
-    # 初始化结果列表
+    # Initialize result list
     if os.path.exists(output_path):
         try:
             with open(output_path, 'r', encoding='utf-8') as f:
@@ -106,27 +106,27 @@ def process_dataset(input_path: str, output_path: str, checkpoint_path: str):
     total_duration = 0.0
     successful_count = 0
     
-    print(f"🚀 开始处理题目 (模型: {MODEL}) | 总计: {total_items} | 起始位置: {processed_count}")
+    print(f"🚀 Start processing tasks (Model: {MODEL}) | Total items: {total_items} | Start index: {processed_count}")
     
     for idx in range(processed_count, total_items):
         item = items[idx]
         prompt = build_thought_limitations_prompt(item)
         
-        print(f"\n[{idx+1}/{total_items}] 处理问题 ID: {item.get('id', 'N/A')}")
+        print(f"\n[{idx+1}/{total_items}] Processing question ID: {item.get('id', 'N/A')}")
         
         solution, duration = call_gemini_api(client, prompt)
         
-        # 只记录 solution 字段
+        # Only write generated content to solution field
         results[idx]["solution"] = solution
         
         if solution:
             successful_count += 1
             total_duration += duration
-            print(f"✅ 成功 | 耗时: {duration:.2f} 秒")
+            print(f"✅ Success | Time cost: {duration:.2f} seconds")
         else:
-            print(f"❌ 失败")
+            print(f"❌ Failed")
         
-        # 实时保存结果和 Checkpoint
+        # Save results and checkpoint in real time
         save_results(output_path, results)
         processed_count += 1
         save_checkpoint(checkpoint_path, processed_count)
@@ -134,21 +134,21 @@ def process_dataset(input_path: str, output_path: str, checkpoint_path: str):
         if idx < total_items - 1:
             time.sleep(REQUEST_DELAY)
     
-    # 统计信息
+    # Calculate statistical metrics
     avg_duration = total_duration / successful_count if successful_count > 0 else 0
     stats_path = output_path.replace('.json', '_stats.json')
     with open(stats_path, 'w', encoding='utf-8') as f:
         json.dump({"average_time_seconds": avg_duration}, f, ensure_ascii=False, indent=2)
     
     print(f"\n{'='*50}")
-    print(f"✅ 处理完成! 结果已保存至: {output_path}")
-    print(f"⏱️ 平均耗时: {avg_duration:.4f} 秒/题")
+    print(f"✅ Processing completed! Results saved to: {output_path}")
+    print(f"⏱️ Average latency: {avg_duration:.4f} seconds per question")
     print(f"{'='*50}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="使用 Gemini 处理数据集 (Thought + Limitations)")
-    parser.add_argument("--input", type=str, required=True, help="输入JSON路径")
-    parser.add_argument("--output", type=str, required=True, help="输出JSON路径")
+    parser = argparse.ArgumentParser(description="Process dataset with Gemini (Reasoning + Restrictions)")
+    parser.add_argument("--input", type=str, required=True, help="File path of input JSON")
+    parser.add_argument("--output", type=str, required=True, help="File path of output JSON")
     
     args = parser.parse_args()
     

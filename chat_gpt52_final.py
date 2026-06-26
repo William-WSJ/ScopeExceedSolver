@@ -5,13 +5,13 @@ import os
 import openai
 from typing import List, Dict, Any, Tuple
 
-# ====== 全局配置区 ======
+# ====== Global Configuration Section ======
 API_KEY = ""  
 BASE_URL = "https://aihubmix.com/v1"
 MODEL = "gpt-5.2"
 MAX_TOKENS = 2048
-REQUEST_DELAY = 0.5  # 请求间隔时间(秒)
-# ========================
+REQUEST_DELAY = 0.5  # Request interval in seconds
+# =========================================
 
 def create_client():
     return openai.OpenAI(
@@ -30,16 +30,16 @@ def call_gpt52_api(client: openai.OpenAI, prompt: str) -> Tuple[str, float]:
         duration = time.time() - start_time
         return response.choices[0].message.content.strip(), duration
     except Exception as e:
-        print(f"API 请求失败: {str(e)}")
+        print(f"API request failed: {str(e)}")
         return "", time.time() - start_time
 
 def build_prompt(item: Dict) -> str:
-    """构建带思路和限制条件的 Prompt"""
+    """Construct prompt with solving ideas and restriction rules"""
     question = item.get("question", "")
     idea = item.get("thought", "")
-    # 优先级：cautions > grade_cautions
+    # Priority: cautions > grade_cautions
     limitations_list = item.get("grade_cautions", [])
-    limitations_str = "\n".join([f"- {limit}" for limit in limitations_list]) if limitations_list else "无"
+    limitations_str = "\n".join([f"- {limit}" for limit in limitations_list]) if limitations_list else "None"
 
     return f"""
 请根据我的解题思路解决以下问题：
@@ -82,7 +82,7 @@ def process_dataset(input_path: str, output_path: str, checkpoint_path: str):
     
     processed_count = load_checkpoint(checkpoint_path)
     
-    # 初始化或加载已有结果
+    # Initialize or load existing results
     if os.path.exists(output_path):
         try:
             with open(output_path, 'r', encoding='utf-8') as f:
@@ -95,27 +95,27 @@ def process_dataset(input_path: str, output_path: str, checkpoint_path: str):
     total_duration = 0.0
     successful_count = 0
     
-    print(f"🚀 开始处理题目，总计: {total_items} | 已跳过: {processed_count}")
+    print(f"🚀 Start processing problems, total: {total_items} | Skipped finished items: {processed_count}")
     
     for idx in range(processed_count, total_items):
         item = items[idx]
         prompt = build_prompt(item)
 
-        print(f"[{idx+1}/{total_items}] 处理 ID: {item.get('id', 'N/A')}", end=" ")
+        print(f"[{idx+1}/{total_items}] Processing ID: {item.get('id', 'N/A')}", end=" ")
         
         solution, duration = call_gpt52_api(client, prompt)
         
-        # 只记录 solution
+        # Only store generated solution
         results[idx]["solution"] = solution
         
         if solution:
             successful_count += 1
             total_duration += duration
-            print(f"✅ 耗时: {duration:.2f}s")
+            print(f"✅ Time cost: {duration:.2f}s")
         else:
-            print(f"❌ 失败")
+            print(f"❌ Failed")
         
-        # 实时保存结果与断点
+        # Save output and checkpoint in real time
         save_results(output_path, results)
         processed_count += 1
         save_checkpoint(checkpoint_path, processed_count)
@@ -123,18 +123,18 @@ def process_dataset(input_path: str, output_path: str, checkpoint_path: str):
         if idx < total_items - 1:
             time.sleep(REQUEST_DELAY)
     
-    # 计算平均时间并保存统计
+    # Calculate average inference time and save statistics
     avg_duration = total_duration / successful_count if successful_count > 0 else 0
     stats_path = output_path.replace('.json', '_stats.json')
     with open(stats_path, 'w', encoding='utf-8') as f:
         json.dump({"average_time_seconds": avg_duration}, f, ensure_ascii=False, indent=2)
 
-    print(f"\n任务完成！平均耗时: {avg_duration:.2f}s | 统计已保存至: {stats_path}")
+    print(f"\nAll tasks completed! Average time cost: {avg_duration:.2f}s | Statistics saved to: {stats_path}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", required=True, help="输入文件路径")
-    parser.add_argument("--output", required=True, help="输出文件路径")
+    parser.add_argument("--input", required=True, help="Path of input file")
+    parser.add_argument("--output", required=True, help="Path of output file")
     args = parser.parse_args()
     
     ckpt_path = args.output.replace('.json', '_checkpoint.json')

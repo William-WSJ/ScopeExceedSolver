@@ -1,7 +1,7 @@
 import json
 from openai import OpenAI
 
-# 初始化Ollama客户端
+# Initialize Ollama client
 client = OpenAI(
     base_url="http://localhost:11434/v1",
     api_key="ollama"
@@ -11,7 +11,7 @@ INPUT_FILE = "/home/wangsijin/final/syllabus_qwen-7b_full_gpt5_2.json"
 OUTPUT_FILE = "syllabus_qwen-7b_full_gpt5_2.json"
 
 def check_answer(question, answer, solution):
-    """判断答案是否一致，严格只返回True/False"""
+    """Judge whether answers are consistent, only return True/False strictly"""
     prompt = f"""
 请帮我判断这个问题的答案是否与我给出的答案一致
 
@@ -34,19 +34,19 @@ def check_answer(question, answer, solution):
             timeout=30.0
         )
         result = response.choices[0].message.content.strip()
-        return "True" in result  # 兼容性处理，包含True即判定为真
+        return "True" in result  # Compatibility processing: return true if output contains True
     except:
         return False
 
 def check_exceeds_scope(solution, limitations):
     """
-    仅根据 solution 和 limitations 列表判断是否超纲
-    使用 Few-shot 提高模型判定准确度
+    Judge whether the solution exceeds scope based on solution and limitation list
+    Adopt Few-shot examples to improve model judgment accuracy
     """
     if not limitations:
         return False, "无限制列表，默认不超纲"
 
-    # 格式化限制列表
+    # Format limitation list
     limitations_str = "\n".join([f"{i+1}. {rule}" for i, rule in enumerate(limitations)])
 
     prompt = f"""你是一个严格的逻辑审查员。请判断提供的“解答过程”是否涉及了“限制列表”中的任何内容。
@@ -100,20 +100,20 @@ def check_exceeds_scope(solution, limitations):
     except:
         return True, "判定过程异常，默认设为超纲"
 
-# 1. 读取JSON文件
+# 1. Load JSON file
 with open(INPUT_FILE, 'r', encoding='utf-8') as f:
     data = json.load(f)
 
-# 2. 逐条处理
+# 2. Process items one by one
 for i, item in enumerate(data):
-    # --- 逻辑 A: 答案正确性检查 ---
+    # --- Logic A: Answer correctness check ---
     # if not all(k in item for k in ["question", "answer", "solution"]):
     #     item["acc"] = False
     # else:
     #     item["acc"] = check_answer(item["question"], item["answer"], item["solution"])
 
-    # --- 逻辑 B: 超纲检查 ---
-    # 优先取 cautions 字段，没有则取 grade_cautions
+    # --- Logic B: Out-of-scope check ---
+    # Prioritize cautions field, fall back to grade_cautions if missing
     current_limitations = item.get("cautions")
     solution_text = item.get("solution", "")
     
@@ -121,14 +121,14 @@ for i, item in enumerate(data):
     item["exceeds_scope"] = exceeds
     item["exceeds_reason"] = reason
 
-    # 打印实时进度
-    scope_status = "❌ 超纲" if exceeds else "✅ 合规"
-    # acc_status = "✔ 对" if item["acc"] else "✘ 错"
-    print(f"[{i+1}/{len(data)}] ID: {item.get('id')} | 答案: {item.get('acc')} | 状态: {scope_status} | 原因: {reason}")
+    # Print real-time processing progress
+    scope_status = "❌ Out of Scope" if exceeds else "✅ Compliant"
+    # acc_status = "✔ Correct" if item["acc"] else "✘ Incorrect"
+    print(f"[{i+1}/{len(data)}] ID: {item.get('id')} | Answer Match: {item.get('acc')} | Status: {scope_status} | Reason: {reason}")
 
-# 3. 保存结果
+# 3. Save processed results
 with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
 
-print(f"\n处理完成！结果已保存至 {OUTPUT_FILE}")
-print(f"超纲统计: {sum(1 for item in data if item.get('exceeds_scope', False))}/{len(data)}")
+print(f"\nProcessing completed! Results saved to {OUTPUT_FILE}")
+print(f"Out-of-scope statistics: {sum(1 for item in data if item.get('exceeds_scope', False))}/{len(data)}")

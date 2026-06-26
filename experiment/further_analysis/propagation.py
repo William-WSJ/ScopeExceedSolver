@@ -11,8 +11,8 @@ BASE_URL = "http://localhost:8000/v1"
 API_KEY = "EMPTY"
 MODEL_PATH = "/root/autodl-tmp/models/openai-mirror/gpt-oss-20b"
 
-INPUT_DIR = "/root/autodl-tmp/process"      # 评分结果文件夹
-OUTPUT_DIR = "/root/autodl-tmp/propagation" # 传播分析结果文件夹
+INPUT_DIR = "./process"      # 评分结果文件夹
+OUTPUT_DIR = "./propagation" # 传播分析结果文件夹
 TIMEOUT = 120.0
 MAX_RETRIES = 3
 # ==============================================

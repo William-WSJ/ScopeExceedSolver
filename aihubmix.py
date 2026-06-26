@@ -1,15 +1,15 @@
 import openai
 
 client = openai.OpenAI(
-  api_key="",  # 换成你在 AiHubMix 生成的密钥
+  api_key="",  # Replace with your API key generated on AiHubMix
   base_url="https://aihubmix.com/v1"
 )
 
 response = client.chat.completions.create(
   model="gemini-3-flash-preview-free",
   messages=[
-      {"role": "user", "content": "生命的意义是什么？"}
+      {"role": "user", "content": "Who are you?"}
   ]
 )
 
-print(response.choices[0].message.content) # 该模型默认开启思考模式
+print(response.choices[0].message.content) # Thinking mode is enabled by default for this model

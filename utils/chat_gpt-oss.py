@@ -2,8 +2,8 @@ from openai import OpenAI
 import sys
 
 client = OpenAI(
-    base_url="http://localhost:11434/v1",  # 本地 Ollama API
-    api_key="ollama"  # 随便填个 key
+    base_url="http://localhost:11434/v1",  # Local Ollama API endpoint
+    api_key="ollama"  # Arbitrary placeholder key
 )
 
 def chat_stream(prompt):
@@ -13,16 +13,16 @@ def chat_stream(prompt):
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": prompt}
         ],
-        stream=True  # 启用流式响应
+        stream=True  # Enable streaming response
     )
 
     full_response = ""
     for chunk in stream:
         if chunk.choices[0].delta.content is not None:
             content = chunk.choices[0].delta.content
-            # print(content, end="", flush=True)  # 实时输出，不换行
+            # print(content, end="", flush=True)  # Real-time output without line break
             full_response += content
-    # print()  # 最后换行
+    # print()  # New line after output finishes
     return full_response
 
 def main():
@@ -33,7 +33,7 @@ def main():
     
     response = chat_stream(prompt + content)
     print(response)
-    # 如果你需要后续使用完整回复，也可以保留返回值
+    # You may keep the return value if the full response needs to be used later
     # print("\n[Full response captured]")
 
 if __name__ == "__main__":

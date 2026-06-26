@@ -7,7 +7,7 @@ from typing import Dict, Any, Tuple, List, Union
 
 def build_prompt(question: str, idea: str, limitations: List[str]) -> str:
     """
-    根据提供的模板构建完整的提示语
+    Construct complete prompt with predefined template
     """
     limitations_str = "\n".join([f"- {limit}" for limit in limitations])
     return f"""
@@ -31,8 +31,8 @@ def call_deepseek_api(
     max_tokens: int = 2048
 ) -> Tuple[str, float]:
     """
-    调用 DeepSeek-V3 API 获取解答
-    返回: (response_content, duration_in_seconds)
+    Invoke DeepSeek-V3 API to generate solution
+    Return: (response text, request duration in seconds)
     """
     headers = {
         "Authorization": f"Bearer {api_key}",
@@ -50,7 +50,7 @@ def call_deepseek_api(
         "thinking_budget": 4096,
         "min_p": 0.05,
         "stop": None,
-        "temperature": 0.0,  # 保持确定性输出
+        "temperature": 0.0,  # Ensure deterministic output
         "top_p": 0.7,
         "top_k": 50,
         "frequency_penalty": 0.5,
@@ -64,7 +64,7 @@ def call_deepseek_api(
             f"{base_url}/v1/chat/completions",
             json=payload,
             headers=headers,
-            timeout=60  # 60秒超时
+            timeout=60  # Request timeout: 60 seconds
         )
         duration = time.time() - start_time
         
@@ -90,13 +90,13 @@ def process_dataset(
     max_tokens: int
 ) -> float:
     """
-    处理整个数据集，统计平均耗时
+    Process full dataset and calculate average request latency
     """
-    # 读取数据集
+    # Load dataset file
     with open(input_path, "r", encoding="utf-8") as f:
         data = json.load(f)
     
-    # 确保是列表格式
+    # Standardize data to list format
     items = data if isinstance(data, list) else [data]
     
     results = []
@@ -104,34 +104,34 @@ def process_dataset(
     successful_count = 0
     total_items = len(items)
     
-    print(f"🚀 开始处理 {total_items} 个问题 (使用模型: {model})")
-    print(f"💡 Idea 字段: '{idea_key}' | ⚠️ 限制条件字段: 'cautions'")
+    print(f"🚀 Start processing {total_items} questions (Model: {model})")
+    print(f"💡 Idea field key: '{idea_key}' | ⚠️ Restriction field key: 'cautions'")
     
     for idx, item in enumerate(items):
-        # 验证必要字段
+        # Check required fields existence
         if idea_key not in item:
-            print(f"❌ 跳过 ID {item.get('id', 'N/A')}: 缺少 '{idea_key}' 字段")
+            print(f"❌ Skip ID {item.get('id', 'N/A')}: Missing field '{idea_key}'")
             continue
             
         if "grade_cautions" not in item:
-            print(f"❌ 跳过 ID {item.get('id', 'N/A')}: 缺少 'cautions' 字段")
+            print(f"❌ Skip ID {item.get('id', 'N/A')}: Missing field 'cautions'")
             continue
             
         if "question" not in item:
-            print(f"❌ 跳过 ID {item.get('id', 'N/A')}: 缺少 'question' 字段")
+            print(f"❌ Skip ID {item.get('id', 'N/A')}: Missing field 'question'")
             continue
         
-        # 构建提示语
+        # Assemble prompt content
         prompt = build_prompt(
             question=item["question"],
             idea=item[idea_key],
             limitations=item["cautions"]
         )
         
-        print(f"\n[{idx+1}/{total_items}] 处理问题 ID: {item.get('id', 'N/A')}")
-        print(f"❓ 问题: {item['question'][:50]}{'...' if len(item['question']) > 50 else ''}")
+        print(f"\n[{idx+1}/{total_items}] Processing Question ID: {item.get('id', 'N/A')}")
+        print(f"❓ Question preview: {item['question'][:50]}{'...' if len(item['question']) > 50 else ''}")
         
-        # 调用 API
+        # Send API request
         solution, duration = call_deepseek_api(
             prompt=prompt,
             api_key=api_key,
@@ -139,7 +139,7 @@ def process_dataset(
             max_tokens=max_tokens
         )
         
-        # 记录结果
+        # Record request output
         result = {
             "id": item.get("id"),
             "question": item["question"],
@@ -154,15 +154,15 @@ def process_dataset(
         if solution:
             successful_count += 1
             total_duration += duration
-            print(f"✅ 成功 | 耗时: {duration:.4f} 秒")
-            print(f"📝 解答: {solution[:100]}{'...' if len(solution) > 100 else ''}")
+            print(f"✅ Success | Latency: {duration:.4f} seconds")
+            print(f"📝 Solution preview: {solution[:100]}{'...' if len(solution) > 100 else ''}")
         else:
-            print(f"❌ 失败 | 耗时: {duration:.4f} 秒")
+            print(f"❌ Failed | Latency: {duration:.4f} seconds")
     
-    # 计算平均耗时
+    # Calculate average latency
     avg_duration = total_duration / successful_count if successful_count > 0 else 0
     
-    # 保存结果
+    # Assemble output data with metadata
     output_data = {
         "metadata": {
             "input_file": input_path,
@@ -182,44 +182,44 @@ def process_dataset(
         json.dump(output_data, f, ensure_ascii=False, indent=2)
     
     print(f"\n{'='*50}")
-    print(f"✅ 处理完成!")
-    print(f"📊 总样本数: {total_items}")
-    print(f"✅ 成功: {successful_count} | ❌ 失败: {total_items - successful_count}")
-    print(f"⏱️ 平均耗时: {avg_duration:.4f} 秒/题")
-    print(f"💾 结果已保存至: {output_path}")
+    print(f"✅ All tasks finished!")
+    print(f"📊 Total samples: {total_items}")
+    print(f"✅ Succeeded: {successful_count} | ❌ Failed: {total_items - successful_count}")
+    print(f"⏱️ Average latency: {avg_duration:.4f} seconds per question")
+    print(f"💾 Output saved to: {output_path}")
     print(f"{'='*50}")
     
     return avg_duration
 
 def get_api_key() -> str:
-    """从环境变量或输入获取API密钥"""
+    """Read API key from environment variable or user input"""
     api_key = os.getenv("SILICONFLOW_API_KEY")
     if not api_key:
-        api_key = input("请输入 SiliconFlow API 密钥: ").strip()
+        api_key = input("Please input your SiliconFlow API key: ").strip()
     return api_key
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="统计 DeepSeek-V3 API 解题耗时 (SiliconFlow)")
-    parser.add_argument("--input", type=str, required=True, help="输入JSON数据集路径")
-    parser.add_argument("--output", type=str, required=True, help="输出结果JSON路径")
+    parser = argparse.ArgumentParser(description="Calculate DeepSeek-V3 API inference latency via SiliconFlow")
+    parser.add_argument("--input", type=str, required=True, help="File path of input JSON dataset")
+    parser.add_argument("--output", type=str, required=True, help="File path of output result JSON")
     parser.add_argument("--idea-key", type=str, default="thought", 
-                        help="JSON中idea字段的键名 (默认: thought)")
+                        help="Key name of reasoning field in JSON (default: thought)")
     parser.add_argument("--model", type=str, default="deepseek-ai/DeepSeek-V3",
-                        help="使用的模型名称 (默认: deepseek-ai/DeepSeek-V3)")
+                        help="Target model name (default: deepseek-ai/DeepSeek-V3)")
     parser.add_argument("--max-tokens", type=int, default=2048,
-                        help="最大生成token数 (默认: 2048)")
+                        help="Maximum generation token limit (default: 2048)")
     
     args = parser.parse_args()
     
-    # 获取API密钥
+    # Acquire API key
     api_key = get_api_key()
     if not api_key:
-        print("❌ 错误: 未提供API密钥")
+        print("❌ Error: No valid API key provided")
         exit(1)
     
-    print(f"🔧 配置: 模型={args.model} | 最大token={args.max_tokens} | Idea字段={args.idea_key}")
+    print(f"🔧 Runtime Config: Model={args.model} | Max Tokens={args.max_tokens} | Idea Field={args.idea_key}")
     
-    # 处理数据集
+    # Start dataset processing pipeline
     avg_time = process_dataset(
         input_path=args.input,
         output_path=args.output,
