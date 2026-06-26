@@ -1,7 +1,8 @@
-```markdown
 # Scope Exceed Solver
 
 This repository contains scripts for testing, evaluating, and generating solutions for math problems using various AI models.
+
+<iframe src="./figures/agent-structure-en-v1.pdf" width="100%" height="700"></iframe>
 
 ## Features
 
@@ -58,12 +59,8 @@ Make sure to configure the following in your environment:
 
 ## Requirements
 
-- Python 3.x
-- Required packages (see requirements.txt)
 - Ollama for local model serving
 - Llama Factory for model deployment
 
 ## License
-
-[Add your license information here]
 ```
