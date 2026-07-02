@@ -3,7 +3,7 @@ import json
 from collections import defaultdict
 
 # ===================== Core Configuration (Only modify this line) =====================
-JSON_FILE_PATH = "./syllabus_deepseek-7b_full_gemini3.json"  # Replace with absolute/relative path of your JSON file
+JSON_FILE_PATH = "./syllabus_4o-mini_finetuned_gemini3.json"  # Replace with absolute/relative path of your JSON file
 # JSON_FILE_PATH = "./syllabus_baseline_gpt_5_2_direct.json"  # Replace with absolute/relative path of your JSON file
 # ======================================================================================
 

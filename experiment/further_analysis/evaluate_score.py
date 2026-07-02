@@ -82,7 +82,7 @@ def build_idea_checklist_prompt(question: str, thought: str, solution: str, acc:
 }}"""
 
 def call_model_full(prompt: str) -> str:
-    """Robust non-streaming request function: handle NoneType and print complete response"""
+    """Call the evaluator model and return the raw response text."""
     try:
         response = client.chat.completions.create(
             model=MODEL_PATH,
@@ -92,9 +92,9 @@ def call_model_full(prompt: str) -> str:
             stream=False,
             timeout=TIMEOUT
         )
-        # ==================== Format Print Zone ====================
+        # ==================== Debug output ====================
         print("\n" + "="*30 + " API RESPONSE DEBUG " + "="*30)
-        # Use model_dump_json to format and print full response object
+        # Print the full response object for debugging.
         print(response.model_dump_json(indent=2))
         print("="*80)
         # ==========================================================
@@ -102,7 +102,7 @@ def call_model_full(prompt: str) -> str:
         # print(content)
         if content is None:
             return ""
-        # Print raw model output in real time
+        # Print the raw model output for debugging.
         print(f"\n[Model Response]:\n{content}")
         return content.strip()
     except Exception as e:
@@ -110,7 +110,7 @@ def call_model_full(prompt: str) -> str:
         return ""
 
 def process_file(file_path: Path):
-    """Process single JSON file sequentially: save raw model output directly"""
+    """Process one subset file and save the raw scoring output."""
     output_path = Path(OUTPUT_DIR) / f"{file_path.stem}_process.json"
     print(f"\n📂 Start processing file: {file_path.name}")
     
@@ -122,7 +122,7 @@ def process_file(file_path: Path):
         print(f"[{idx}/{len(items)}] ID: {item.get('id')} ", end="", flush=True)
         
         raw_ans = ""
-        # 3-time retry mechanism
+        # Retry up to three times for each sample.
         for attempt in range(1, MAX_RETRIES + 1):
             prompt = build_idea_checklist_prompt(
                 question=item.get('question', ''),
@@ -139,28 +139,28 @@ def process_file(file_path: Path):
                 print(f"-> R{attempt}", end=" ")
                 time.sleep(1)
 
-        # Deep copy original data and append raw model response field
+        # Copy the original item and append the raw model response.
         item_copy = item.copy()
         item_copy["raw_model_response"] = raw_ans
         results.append(item_copy)
         print() 
 
-    # Save full dataset immediately after finishing one file
+    # Save the full scored file after processing completes.
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
-    print(f"✅ File {file_path.name} processed and saved successfully.")
+    print(f"Finished and saved: {output_path.name}")
 
 def main():
-    # Initialize directory paths
+    # Initialize input and output directory paths.
     in_p = Path(INPUT_DIR)
     out_p = Path(OUTPUT_DIR)
     out_p.mkdir(parents=True, exist_ok=True)
     
-    # Sequential traversal: a.json -> b.json -> c.json
+    # Process files sequentially in sorted order.
     json_files = sorted([f for f in in_p.glob("*.json") if "_process" not in f.name])
     
     if not json_files:
-        print(f"No JSON files found under directory {INPUT_DIR}.")
+        print(f"No JSON files found under {INPUT_DIR}.")
         return
 
     for f in json_files:

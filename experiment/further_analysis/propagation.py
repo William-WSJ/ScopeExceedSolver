@@ -6,20 +6,20 @@ from openai import OpenAI
 from tqdm import tqdm
 from typing import Dict, List, Optional
 
-# ==================== 配置区 ====================
+# ==================== Configuration ====================
 BASE_URL = "http://localhost:8000/v1"
 API_KEY = "EMPTY"
 MODEL_PATH = "/root/autodl-tmp/models/openai-mirror/gpt-oss-20b"
 
-INPUT_DIR = "./process"      # 评分结果文件夹
-OUTPUT_DIR = "./propagation" # 传播分析结果文件夹
+INPUT_DIR = "./process"      # Scoring result directory
+OUTPUT_DIR = "./propagation" # Propagation analysis output directory
 TIMEOUT = 120.0
 MAX_RETRIES = 3
 # ==============================================
 
 client = OpenAI(base_url=BASE_URL, api_key=API_KEY)
 
-# --- 提示语模板 ---
+# --- Prompt templates ---
 
 PATH_ERROR_PROMPT_TEMPLATE = """
 任务：分析小学数学题的"思路"，判断其是否存在错误。若无错误请输出0，若有错误请输出对应的类型编号。
@@ -48,13 +48,13 @@ EXECUTION_ERROR_PROPAGATION_PROMPT_TEMPLATE = """
 解答结果：{solve}
 传播类型编号："""
 
-# --- 核心辅助函数 ---
+# --- Core helper functions ---
 
 def parse_correctness_score(raw_response: str) -> int:
-    """从 raw_model_response 字符串中解析出 '正确性' 分数"""
+    """Parse the archived `correctness` score from `raw_model_response`."""
     try:
         if not raw_response: return 10
-        # 寻找 JSON 块
+        # Find the embedded JSON block.
         start = raw_response.find('{')
         end = raw_response.rfind('}') + 1
         if start != -1 and end != 0:
@@ -62,10 +62,10 @@ def parse_correctness_score(raw_response: str) -> int:
             return int(data.get("正确性", 10))
     except:
         pass
-    return 10 # 解析失败默认给10，跳过分析以保安全
+    return 10  # Default to 10 when parsing fails to avoid false-positive error analysis.
 
 def call_model_for_code(prompt: str) -> str:
-    """调用模型并提取输出中的第一个数字编号"""
+    """Call the classifier model and extract the first digit from the output."""
     try:
         response = client.chat.completions.create(
             model=MODEL_PATH,
@@ -75,33 +75,33 @@ def call_model_for_code(prompt: str) -> str:
             stream=False,
             timeout=TIMEOUT
         )
-        # ==================== 格式化输出区 ====================
+        # ==================== Debug output ====================
         print("\n" + "="*30 + " API RESPONSE DEBUG " + "="*30)
-        # 使用 model_dump_json 格式化打印整个响应对象
+        # Print the full response object for debugging.
         print(response.model_dump_json(indent=2))
         print("="*80)
         msg = response.choices[0].message
         content = msg.content or getattr(msg, 'reasoning_content', "")
         if not content: return "5"
         
-        # 提取第一个数字
+        # Extract the first digit from the model output.
         for char in content.strip():
             if char.isdigit(): return char
         return "5"
     except:
         return "5"
 
-# --- 业务逻辑 ---
+# --- Main processing logic ---
 
 def process_file(file_path: Path):
     output_path = Path(OUTPUT_DIR) / f"{file_path.stem}_prop_analysed.json"
-    print(f"\n📂 正在分析文件: {file_path.name}")
+    print(f"\nAnalyzing file: {file_path.name}")
     
     with open(file_path, 'r', encoding='utf-8') as f:
         items = json.load(f)
 
     processed_results = []
-    # 局部统计初始化
+    # Initialize per-file summary counts.
     stats = {
         "Logical Incompleteness": {"count": 0, "FR": 0, "CER": 0, "MER": 0},
         "Step Skipping": {"count": 0, "FR": 0, "CER": 0, "MER": 0},
@@ -111,17 +111,17 @@ def process_file(file_path: Path):
     error_found_count = 0
 
     for item in tqdm(items):
-        # 1. 判断是否需要进行错误分析
+        # 1. Decide whether this sample enters error analysis.
         raw_res = item.get("raw_model_response", "")
         correctness_score = parse_correctness_score(raw_res)
         
-        # 逻辑：只要正确性评分 < 10，就判定为存在缺陷
+        # If the archived correctness score is below 10, treat the path as flawed.
         if correctness_score >= 10:
             item["path_error_type"] = "Correct"
             processed_results.append(item)
             continue
 
-        # 2. 判定思路错误类型 (Path Error)
+        # 2. Classify the path error type.
         err_code = call_model_for_code(PATH_ERROR_PROMPT_TEMPLATE.format(
             question=item.get("question", ""),
             thought=item.get("thought", "")
@@ -139,7 +139,7 @@ def process_file(file_path: Path):
             error_found_count += 1
             stats[err_type]["count"] += 1
             
-            # 3. 判定传播情况 (Propagation)
+            # 3. Classify the propagation outcome.
             prop_code = call_model_for_code(EXECUTION_ERROR_PROPAGATION_PROMPT_TEMPLATE.format(
                 question=item.get("question", ""),
                 thought=item.get("thought", ""),
@@ -147,7 +147,7 @@ def process_file(file_path: Path):
             ))
             
             prop_map = {"1": "CER", "2": "FR", "3": "MER"}
-            prop_type = prop_map.get(prop_code, "CER") # 默认归类为延续错误
+            prop_type = prop_map.get(prop_code, "CER")  # Default to continued error when classification is missing.
             
             stats[err_type][prop_type] += 1
             item["path_error_type"] = err_type
@@ -157,14 +157,14 @@ def process_file(file_path: Path):
 
         processed_results.append(item)
 
-    # 保存单个分析结果
+    # Save the per-file propagation annotations.
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(processed_results, f, ensure_ascii=False, indent=2)
     
     return stats, error_found_count
 
 def print_latex_summary(grand_stats, grand_total):
-    """输出符合要求的 LaTeX 表格代码"""
+    """Print a LaTeX table summarizing the propagation counts."""
     print("\n" + "="*25 + " LaTeX TABLE START " + "="*25)
     print(r"\begin{table*}[!htbp]")
     print(r"  \centering")
@@ -195,7 +195,7 @@ def print_latex_summary(grand_stats, grand_total):
 def main():
     Path(OUTPUT_DIR).mkdir(parents=True, exist_ok=True)
     
-    # 全局汇总统计
+    # Initialize global summary counts.
     grand_stats = {
         "Logical Incompleteness": {"count": 0, "FR": 0, "CER": 0, "MER": 0},
         "Step Skipping": {"count": 0, "FR": 0, "CER": 0, "MER": 0},
@@ -207,7 +207,7 @@ def main():
     json_files = sorted([f for f in Path(INPUT_DIR).glob("*.json") if "_propagation" not in f.name])
     
     if not json_files:
-        print(f"未在 {INPUT_DIR} 找到 JSON 文件")
+        print(f"No JSON files found under {INPUT_DIR}.")
         return
 
     for f in json_files:
@@ -217,7 +217,7 @@ def main():
             for field in ["count", "FR", "CER", "MER"]:
                 grand_stats[k][field] += f_stats[k][field]
 
-    # 输出最终的 LaTeX 表格
+    # Print the final LaTeX table.
     print_latex_summary(grand_stats, grand_total_errors)
 
 if __name__ == "__main__":

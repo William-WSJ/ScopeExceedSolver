@@ -1,6 +1,13 @@
 import json
 import os
+from pathlib import Path
+
 import pandas as pd
+
+
+PROJECT_ROOT = Path(__file__).resolve().parent
+DATASET_DIR = PROJECT_ROOT / "dataset"
+EXPERIMENT_DIR = PROJECT_ROOT / "experiment"
 
 def read_test_json(filepath):
     with open(filepath, "r", encoding="utf-8") as f:
@@ -21,7 +28,7 @@ def write_checkpoint(mode, count, correct, relevant):
     with open(checkpoint_file, "w") as f:
         f.write(f"{count},{correct},{relevant}")
 
-# Batch inference: convert json file to jsonl format
+# Batch inference helper: convert a JSON dataset into JSONL requests.
 def convert_to_jsonl(input_file, output_file):
     def prepare_content(data):
         content_template = (
@@ -32,11 +39,11 @@ def convert_to_jsonl(input_file, output_file):
             "请注意，如果我的解题思路有明显的错误，请纠正后再解答。"
         )
 
-        # Merge all elements in the list into one string
+        # Merge list elements into a single string.
         def join_list_to_string(lst):
             return '\n'.join(lst)
 
-        # Generate the final content text
+        # Build the final prompt content.
         content = content_template.format(
             question=data["question"],
             idea=data['thoughts_mini_finetuned'],
@@ -62,33 +69,38 @@ def convert_to_jsonl(input_file, output_file):
             }
         }
 
-    # Read input file
+    # Read the input file.
     with open(input_file, 'r', encoding='utf-8') as infile:
         data_list = json.load(infile)
 
-    # Wrap single object into a list if input is not an array
+    # Wrap a single object into a list if needed.
     if not isinstance(data_list, list):
         data_list = [data_list]
 
-    # Open output file for writing
+    # Write one JSON object per line.
     with open(output_file, 'w', encoding='utf-8') as outfile:
-        for data in data_list:  # Numbering starts from 1
-            # print(data)
+        for data in data_list:
             json_obj = create_json_obj(data)
-            json_obj["custom_id"] = f"request-{data['id']}"  # Update custom_id field
+            json_obj["custom_id"] = f"request-{data['id']}"
             json_line = json.dumps(json_obj, ensure_ascii=False)
             outfile.write(json_line + '\n')
-            # break
 
 def extract():
-    with open("dataset/syllabus_check_2395_latest.json", "r", encoding="utf-8") as f:
+    dataset_path = DATASET_DIR / "syllabus_check_2395_latest.json"
+    output_path = EXPERIMENT_DIR / "further_analysis" / "new_data.json"
+
+    with open(dataset_path, "r", encoding="utf-8") as f:
         data = json.load(f)
     new_data = []
     for item in data:
-        # Filter items with specified knowledge points
-        if item["knowledge"] == "鸡兔同笼问题" or item["knowledge"] == "同增同减问题" or item["knowledge"] == "倍的概念及其应用":
+        # Filter items belonging to the selected knowledge points.
+        if item["knowledge"] in {"鸡兔同笼问题", "同增同减问题", "倍的概念及其应用"}:
             new_data.append(item)
-    # Save filtered dataset to target path
-    with open("experiment/further_analysis/new_data.json", "w", encoding="utf-8") as f:
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, "w", encoding="utf-8") as f:
         json.dump(new_data, f, ensure_ascii=False, indent=4)
-extract()
+
+
+if __name__ == "__main__":
+    extract()

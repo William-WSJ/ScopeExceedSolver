@@ -10,7 +10,7 @@ def call_llama_factory_api(question: str, base_url: str = "http://127.0.0.1:8000
     payload = {
         "model": "llama",  # Model name can be arbitrary, this field is usually ignored by LLaMA-Factory
         "messages": [
-            {"role": "system", "content": "请给出下列问题的解题思路"},  # Inference instruction for the model, recommended to keep it simple
+            {"role": "system", "content": "请给出下列问题的解题思路"},  # Experimental prompt kept in Chinese to match the original task language.
             {"role": "user", "content": question}
         ],
         "max_tokens": max_tokens,
@@ -31,7 +31,7 @@ def process_json_file(input_path: str, output_path: str, base_url: str = "http:/
     with open(input_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    # Support single JSON object or JSON array
+    # Support either a single JSON object or a JSON array.
     if isinstance(data, dict):
         items = [data]
         is_single = True
@@ -47,7 +47,7 @@ def process_json_file(input_path: str, output_path: str, base_url: str = "http:/
         item["thought"] = thought
         updated_items.append(item)
 
-    # Write results to output file
+    # Write results to the output file.
     with open(output_path, "w", encoding="utf-8") as f:
         if is_single:
             json.dump(updated_items[0], f, ensure_ascii=False, indent=2)

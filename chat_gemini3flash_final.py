@@ -42,10 +42,11 @@ def build_thought_limitations_prompt(item: Dict) -> str:
     question = item.get("question", "")
     idea = item.get("thought", "")
     
-    # Priority: cautions > grade_cautions
+    # Priority rule: use `grade_cautions` when available.
     limitations_list = item.get("grade_cautions", [])
     limitations_str = "\n".join([f"- {limit}" for limit in limitations_list]) if limitations_list else "None"
 
+    # The prompt body remains in Chinese to preserve the original experiment setting.
     return f"""
 请根据我的解题思路解决以下问题：
 {question}
@@ -91,7 +92,7 @@ def process_dataset(input_path: str, output_path: str, checkpoint_path: str):
     
     processed_count = load_checkpoint(checkpoint_path)
     
-    # Initialize result list
+    # Initialize the result list or resume from an unfinished output file.
     if os.path.exists(output_path):
         try:
             with open(output_path, 'r', encoding='utf-8') as f:
@@ -116,7 +117,7 @@ def process_dataset(input_path: str, output_path: str, checkpoint_path: str):
         
         solution, duration = call_gemini_api(client, prompt)
         
-        # Only write generated content to solution field
+        # Only write generated content to the `solution` field.
         results[idx]["solution"] = solution
         
         if solution:
@@ -126,7 +127,7 @@ def process_dataset(input_path: str, output_path: str, checkpoint_path: str):
         else:
             print(f"❌ Failed")
         
-        # Save results and checkpoint in real time
+        # Save results and checkpoint after each item.
         save_results(output_path, results)
         processed_count += 1
         save_checkpoint(checkpoint_path, processed_count)
@@ -134,7 +135,7 @@ def process_dataset(input_path: str, output_path: str, checkpoint_path: str):
         if idx < total_items - 1:
             time.sleep(REQUEST_DELAY)
     
-    # Calculate statistical metrics
+    # Calculate summary statistics.
     avg_duration = total_duration / successful_count if successful_count > 0 else 0
     stats_path = output_path.replace('.json', '_stats.json')
     with open(stats_path, 'w', encoding='utf-8') as f:

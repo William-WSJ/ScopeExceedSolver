@@ -34,9 +34,11 @@ def batch_test(file_path):
     print(batch_object)
     if batch_object is not None:
         print(
-            f"本次任务元数据:{batch_object.metadata},批量任务提交成功!请保存牢记此次批量任务id:{batch_object.id}")
+            f"Batch job submitted successfully. Metadata: {batch_object.metadata}. "
+            f"Please save the batch job ID: {batch_object.id}"
+        )
     else:
-        print("批量任务提交失败!请重试")
+        print("Batch job submission failed. Please try again.")
     return batch_object
 
 def check_batch_job_status(batch_id):
@@ -46,12 +48,15 @@ def check_batch_job_status(batch_id):
     if batch_object is not None:
         if batch_object.status != "completed":
             print(
-                f"批量任务id:{batch_id},目前状态:{batch_object.status},任务进度:{batch_object.request_counts.completed}/{batch_object.request_counts.total},任务失败个数:{batch_object.request_counts.failed},请继续等待...")
+                f"Batch job ID: {batch_id}, current status: {batch_object.status}, "
+                f"progress: {batch_object.request_counts.completed}/{batch_object.request_counts.total}, "
+                f"failed requests: {batch_object.request_counts.failed}. Please wait..."
+            )
         else:
-            print(f"批量任务id:{batch_id}, 已完成,输出文件id为:{batch_object.output_file_id}")
+            print(f"Batch job ID: {batch_id} completed. Output file ID: {batch_object.output_file_id}")
             return batch_object.files[ 0 ].id
     else:
-        print("batch_id输入错误,批量任务为空")
+        print("Invalid batch ID. No batch job was found.")
         return -1
 
 def get_file_from_openai(file_id):

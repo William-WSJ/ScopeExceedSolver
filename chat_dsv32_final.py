@@ -6,7 +6,7 @@ import openai
 from typing import List, Dict, Any, Tuple
 
 # ====== Global Configuration Section ======
-API_KEY = ""  # Replaced with your API key
+API_KEY = ""  # Replace with your API key.
 BASE_URL = "https://api.deepseek.com"
 MODEL = "deepseek-chat"
 MAX_TOKENS = 2048
@@ -14,7 +14,7 @@ REQUEST_DELAY = 0.5  # Request interval in seconds
 # ====== End of Global Configuration Section ======
 
 def create_client():
-    """Initialize OpenAI compatible client"""
+    """Initialize an OpenAI-compatible client."""
     return openai.OpenAI(
         api_key=API_KEY,
         base_url=BASE_URL
@@ -49,11 +49,11 @@ def build_thought_limitations_prompt(item: Dict) -> str:
     question = item.get("question", "")
     idea = item.get("thought", "")
     
-    # Priority rule: cautions > grade_cautions
+    # Priority rule: use `grade_cautions` when available.
     limitations_list = item.get("grade_cautions", [])
     limitations_str = "\n".join([f"- {limit}" for limit in limitations_list]) if limitations_list else "None"
 
-    # Strictly follow the prompt structure required by user
+    # The prompt body remains in Chinese to preserve the original experiment setting.
     return f"""
 请根据我的解题思路解决以下问题：
 {question}
@@ -68,7 +68,7 @@ def build_thought_limitations_prompt(item: Dict) -> str:
 """
 
 def load_checkpoint(checkpoint_path: str) -> int:
-    """Load processing progress checkpoint file"""
+    """Load the saved processing checkpoint."""
     if os.path.exists(checkpoint_path):
         try:
             with open(checkpoint_path, 'r', encoding='utf-8') as f:
@@ -78,17 +78,17 @@ def load_checkpoint(checkpoint_path: str) -> int:
     return 0
 
 def save_checkpoint(checkpoint_path: str, processed_count: int):
-    """Save current processing progress checkpoint"""
+    """Save the current processing checkpoint."""
     with open(checkpoint_path, 'w', encoding='utf-8') as f:
         json.dump({"processed_count": processed_count}, f)
 
 def save_results(output_path: str, results: List[Dict]):
-    """Save processed dataset results to file"""
+    """Save processed dataset results."""
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
 
 def process_dataset(input_path: str, output_path: str, checkpoint_path: str):
-    """Core dataset processing pipeline logic"""
+    """Run the dataset processing pipeline."""
     client = create_client()
     
     with open(input_path, 'r', encoding='utf-8') as f:
@@ -99,7 +99,7 @@ def process_dataset(input_path: str, output_path: str, checkpoint_path: str):
     
     processed_count = load_checkpoint(checkpoint_path)
     
-    # Initialize result list or load existing unfinished results
+    # Initialize the result list or resume from an unfinished output file.
     if os.path.exists(output_path):
         try:
             with open(output_path, 'r', encoding='utf-8') as f:
@@ -124,7 +124,7 @@ def process_dataset(input_path: str, output_path: str, checkpoint_path: str):
         
         solution, duration = call_model_api(client, prompt)
         
-        # Only store generated answer into solution field
+        # Only store the generated answer in the `solution` field.
         results[idx]["solution"] = solution
         
         if solution:
