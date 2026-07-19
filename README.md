@@ -35,10 +35,8 @@ External dataset release pages:
 
 The main code and analysis components are:
 
-- `experiment.py`: main experiment driver for direct-answer, constrained-answer, path-conditioned, and path-conditioned-with-constraints settings.
 - `generate_path.py`: appends path-generation outputs (`thought` fields) to input JSON files by calling an OpenAI-compatible endpoint.
 - `prompt.py`: prompt templates for generation, answer checking, and out-of-syllabus checking.
-- `utils.py`: shared helpers for loading JSON, checkpointing, batch formatting, and metric-related utilities.
 - `experiment/reproduce_metrics.py`: reproduces the tables and summary statistics from archived JSON outputs already included in the repository.
 - `utils/rank.py`: summarizes ranking-style analyses from the further-analysis artifacts.
 - `chat_dsv32_final.py`, `chat_gemini3flash_final.py`, `chat_gpt52_final.py`, `batch_openai.py`, and `aihubmix.py`: model-specific or batch-inference helper scripts retained for the original experiments.
