@@ -185,10 +185,10 @@ def summarize_rank_inputs(directory: Path) -> List[Dict[str, float]]:
             except json.JSONDecodeError:
                 continue
             mapping = {
-                "idea_score": ["思路评分"],
-                "key_points": ["关键点"],
-                "guidance": ["引导力", "引导性"],
-                "correctness": ["正确性"],
+                "idea_score": ["idea-score"],
+                "key_points": ["key-points"],
+                "guidance": ["guidance"],
+                "correctness": ["correctness"],
             }
             found = False
             for key, aliases in mapping.items():

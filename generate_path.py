@@ -10,7 +10,7 @@ def call_llama_factory_api(question: str, base_url: str = "http://127.0.0.1:8000
     payload = {
         "model": "llama",  # Model name can be arbitrary, this field is usually ignored by LLaMA-Factory
         "messages": [
-            {"role": "system", "content": "请给出下列问题的解题思路"},  # Experimental prompt kept in Chinese to match the original task language.
+            {"role": "system", "content": "Please provide the solution strategy for the following problem:"},
             {"role": "user", "content": question}
         ],
         "max_tokens": max_tokens,

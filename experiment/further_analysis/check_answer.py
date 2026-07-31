@@ -13,16 +13,18 @@ OUTPUT_FILE = "syllabus_qwen-7b_full_gemini3.json"
 def check_answer(question, answer, solution):
     """Judge whether two answers match, only return strict True/False"""
     prompt = f"""
-请帮我判断这个问题的答案是否与我给出的答案一致
+Please help me determine if the answer to this question is consistent with the answer I provided.
 
-问题：{question}
-正确答案：{answer}
-我的解答：{solution}
+        Question: {question}\n
+        Correct Answer: {answer}\n
+        My Answer: {solution}
 
-注意：
-- 正确答案和我的答案可能在形式上不一样，你需要仔细辨别后再给出回答；
-- 如果我的解答没有明确给出答案或者解答中出现乱码等与题目无关的内容且影响最终判断，则返回False。
-请不要返回任何其他内容，只返回True或者False即可。True表示答案一致，False表示答案不一致。
+        Note:
+        - The correct answer and my answer may differ in form, so you need to carefully distinguish them before giving your response;
+        - If my solution does not clearly provide an answer or contains garbled content unrelated to the question that affects the final judgment, please return False.
+        
+        Please do not return any other content, only return True or False. True indicates the answers are consistent, False indicates they are inconsistent.
+
 """
     
     try:

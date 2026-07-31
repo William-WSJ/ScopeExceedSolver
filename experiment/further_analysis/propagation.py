@@ -22,31 +22,32 @@ client = OpenAI(base_url=BASE_URL, api_key=API_KEY)
 # --- Prompt templates ---
 
 PATH_ERROR_PROMPT_TEMPLATE = """
-任务：分析小学数学题的"思路"，判断其是否存在错误。若无错误请输出0，若有错误请输出对应的类型编号。
+Task: Analyze the "solution strategy (thought)" for the elementary school math problem and determine if any errors exist. If there are no errors, please output 0; if an error exists, please output the corresponding type number.
 
-错误类型定义：
-0. 思路正确：思路逻辑清晰，无任何错误
-1. 逻辑不完整：思路缺少关键环节，无法完整引导解题
-2. 步骤跳跃：解题步骤间存在大跨度跳跃，不符合学生认知水平
-3. 分析错误：对问题条件或要求的分析存在错误
-4. 解答错误：思路本身包含错误的解法或计算
-5. 未知错误：不属于以上任何类型
+Error Type Definitions:
+0. Correct Strategy: The strategy is logically clear without any errors.
+1. Logical Incompleteness: The strategy lacks key components and cannot fully guide the problem-solving process.
+2. Step Jump: There are large conceptual leaps between the problem-solving steps, which do not align with a student's cognitive level.
+3. Analytical Error: There is an error in the analysis of the problem's conditions or requirements.
+4. Solution Error: The strategy itself contains an incorrect method or calculation.
+5. Unknown Error: Does not belong to any of the above types.
 
-题目：{question}
-思路：{thought}
-错误类型编号："""
+Question: {question}
+Strategy (Thought): {thought}
+Error Type Number: """
 
 EXECUTION_ERROR_PROPAGATION_PROMPT_TEMPLATE = """
-任务：判断以下小学数学题的"解答结果"对"思路"中错误的处理情况，仅输出传播类型编号（1/2/3）。
-传播类型定义：
-1. 延续错误：解答完全遵循了思路中的错误，没有纠正 (CER)
-2. 修正错误：解答识别并修正了思路中的错误 (FR)
-3. 误判错误：解答在思路正确的情况下引入了新的错误 (MER)
+Task: Evaluate how the "final solution" handles errors present in the "solution strategy (thought)" for the following elementary school math problem. Output only the propagation type number (1/2/3).
 
-题目：{question}
-思路：{thought}
-解答结果：{solve}
-传播类型编号："""
+Propagation Type Definitions:
+1. Continued Error (CER): The final solution completely follows the error in the strategy without any correction.
+2. Fixed Error (FR): The final solution identifies and corrects the error present in the strategy.
+3. Misjudged Error (MER): The final solution introduces a new error despite the strategy being correct.
+
+Question: {question}
+Strategy (Thought): {thought}
+Final Solution: {solve}
+Propagation Type Number: """
 
 # --- Core helper functions ---
 
@@ -59,7 +60,7 @@ def parse_correctness_score(raw_response: str) -> int:
         end = raw_response.rfind('}') + 1
         if start != -1 and end != 0:
             data = json.loads(raw_response[start:end])
-            return int(data.get("正确性", 10))
+            return int(data.get("correctness", 10))
     except:
         pass
     return 10  # Default to 10 when parsing fails to avoid false-positive error analysis.

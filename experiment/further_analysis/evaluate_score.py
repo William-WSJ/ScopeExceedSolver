@@ -27,59 +27,61 @@ def build_idea_checklist_prompt(question: str, thought: str, solution: str, acc:
     """
     acc_status = "正确" if acc else "错误"
     
-    return f"""你是一名极其严谨的数学教育评估专家。
-请结合【问题】与提供的【完整解答】及其【正确性标识】，对【解题思路 (thought)】进行深度评估。
+    return f"""Here is the academic translation of the prompt, meticulously aligned with the descriptions provided in your LaTeX table to ensure consistency in your evaluation metrics:
 
-### 【评估基准】
-- **问题 (Question)**: {question}
-- **完整解答 (Solution)**: {solution} (参考基准)
-- **解答正确性 (acc)**: {acc} (标识该 solution 事实上是{acc_status}的)
-- **待评估思路 (Thought)**: {thought} (评估对象)
+Please conduct an in-depth evaluation of the [Solution Strategy (Thought)] based on the [Question], the provided [Complete Solution], and its [Correctness Indicator].
 
----
+### [Evaluation Baseline]
 
-### 【22 项评分标准清单】
-
-#### 维度一：思路评分 (Logical & Structural, 0-5分)
-1) 推理完整性：推理步骤是否形成完整闭环。
-2) 逻辑一致性：前提与结论是否保持一致。
-3) 严密性：是否存在逻辑跳跃或矛盾。
-4) 规则性：是否遵循基本逻辑规则。
-5) 认知逻辑：步骤序列是否符合认知逻辑。
-6) 自然过渡：相邻步骤间过渡是否自然。
-7) 精简性：是否存在冗余或重复步骤。
-8) 层次性：整体结构是否具有层次性。
-9) 规范性：数学符号使用是否规范。
-10) 术语清晰：关键术语是否定义清晰。
-11) 表达准确：语言表达是否简洁准确。
-12) 推导依据：公式推导过程是否清晰。
-
-#### 维度二：关键点覆盖 (Key Point Coverage, 0-5分)
-13) 核心识别：是否识别题目核心考查点。
-14) 公式应用：是否应用关键公式/定理。
-15) 突破路径：是否找到解题突破口。
-16) 全局性：关键点是否贯穿解题全过程。
-
-#### 维度三：引导力有效性 (Guidance Effectiveness, 0-10分)
-17) 方向明确：解题方向是否清晰明确。
-18) 分步引导：是否提供分步引导。
-19) 框架构建：是否建立可操作的解题框架。
-20) 可操作性：引导内容是否具有实际操作性（不考虑正确性）。
-
-#### 维度四：解答正确性 (Solution Correctness, 0-10分)
-21) 答案正确：最终答案是否正确。
-22) 步骤正确：解题步骤是否正确。
+* **Question**: {question}
+* **Complete Solution**: {solution} (Reference baseline)
+* **Solution Correctness (acc)**: {acc} (Indicates that this solution is factually {acc_status})
+* **Strategy to be Evaluated (Thought)**: {thought} (Evaluation object)
 
 ---
 
-### 【输出要求】
-请以 JSON 格式返回评分结果。禁止任何额外文字。格式如下：
-{{
-  "思路评分": 整数(0-5),
-  "关键点": 整数(0-5),
-  "引导力": 整数(0-10),
-  "正确性": 整数(0-10)
-}}"""
+### [22-Item Scoring Checklist]
+
+#### Dimension 1: Strategy Evaluation (Logical & Structural, 0-5 points)
+
+*Logical Completeness:*
+
+1. **Reasoning Completeness**: Whether the reasoning steps form a complete closed loop.
+2. **Logical Consistency**: The consistency between the premises and conclusion.
+3. **Rigor**: Presence of any logical jumps or contradictions.
+4. **Regularity**: Whether it follows basic logical rules.
+
+*Step Coherence:*
+5) **Cognitive Logic**: Whether the step sequence conforms to cognitive logic.
+6) **Natural Transition**: Whether the transition between adjacent steps is natural.
+7) **Conciseness**: Whether there are redundant or duplicate steps.
+8) **Hierarchical Structure**: Whether the overall structure is hierarchical.
+
+*Clarity of Expression:*
+9) **Standardization**: Whether the use of mathematical symbols is standardized.
+10) **Terminology Clarity**: Whether the key terms are defined clearly.
+11) **Expression Accuracy**: Whether the language expressions are concise and accurate.
+12) **Derivation Basis**: Whether the process of formula derivation is clear.
+
+#### Dimension 2: Key Point Coverage (0-5 points)
+
+13. **Core Identification**: Whether to identify the core test points.
+14. **Formula Application**: Whether to apply key formula theorems.
+15. **Breakthrough Path**: Whether to find a breakthrough in solving the problem.
+16. **Global Scope**: Whether the key points run through the whole course.
+
+#### Dimension 3: Guidance Effectiveness (0-10 points)
+
+17. **Directional Clarity**: Whether the direction of problem-solving is clear?
+18. **Step-by-Step Guidance**: Whether there is a step-by-step guide?
+19. **Framework Construction**: Whether to establish a problem-solving framework.
+20. **Operability**: Whether it is operable (without considering correctness).
+
+#### Dimension 4: Solution Correctness (0-10 points)
+
+21. **Answer Correctness**: Whether the answer is correct.
+22. **Step Correctness**: Whether the solution step is correct.
+"""
 
 def call_model_full(prompt: str) -> str:
     """Call the evaluator model and return the raw response text."""

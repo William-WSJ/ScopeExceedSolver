@@ -48,10 +48,10 @@ def calculate_score_averages(model_splits_dir: str = "../experiment/further_anal
                 if start != -1 and end != 0:
                     score_json = json.loads(raw_text[start:end])
                     mapping = {
-                        "idea_score": ["思路评分"],
-                        "key_points": ["关键点"],
-                        "guidance": ["引导力", "引导性"],
-                        "correctness": ["正确性"],
+                        "idea_score": ["idea-score"],
+                        "key_points": ["key-points"],
+                        "guidance": ["guidance"],
+                        "correctness": ["correctness"],
                     }
 
                     found = False

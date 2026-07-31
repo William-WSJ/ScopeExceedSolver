@@ -45,16 +45,13 @@ def build_prompt(item: Dict) -> str:
 
     # The prompt body remains in Chinese to preserve the original experiment setting.
     return f"""
-请根据我的解题思路解决以下问题：
-{question}
-
-我的解题思路如下：
-{idea}
-
-你的解答过程中严禁出现以下内容或方法：
-{limitations_str}
-
-请注意，如果我的解题思路有明显的错误，请纠正后再解答。
+Please answer the following questions based on my problem-solving path:
+        {question}\n
+        My solution path is as follows:
+        {idea}\n
+        Your solution process strictly prohibits the following content or methods:
+        {limitations_str}\n
+        Note that if there is a significant error in my solution path, please correct it before answering.
 """
 
 def load_checkpoint(checkpoint_path: str) -> int:

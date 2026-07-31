@@ -58,6 +58,5 @@ Effective error samples exclude `Unknown/Correct` and use `n=596`.
 
 ## Notes
 
-- `syllabus_baseline_deepseek_v3_2_subset.json` already contains archived `acc`, `exceeds_scope`, and `exceeds_reason` fields and should be reused as-is.
 - `subset/*_stats.json` stores timing summaries.
 - `process/*.json` and `propagation/*.json` are the sources for path-score and error-propagation analysis.

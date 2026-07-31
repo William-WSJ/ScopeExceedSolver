@@ -13,16 +13,18 @@ OUTPUT_FILE = "syllabus_qwen-7b_full_gpt5_2.json"
 def check_answer(question, answer, solution):
     """Judge whether answers are consistent, only return True/False strictly"""
     prompt = f"""
-请帮我判断这个问题的答案是否与我给出的答案一致
+Please help me determine if the answer to this question is consistent with the answer I provided.
 
-问题：{question}
-正确答案：{answer}
-我的解答：{solution}
+        Question: {question}\n
+        Correct Answer: {answer}\n
+        My Answer: {solution}
 
-注意：
-- 正确答案和我的答案可能在形式上不一样，你需要仔细辨别后再给出回答；
-- 如果我的解答没有明确给出答案或者解答中出现乱码等与题目无关的内容且影响最终判断，则返回False。
-请不要返回任何其他内容，只返回True或者False即可。True表示答案一致，False表示答案不一致。
+        Note:
+        - The correct answer and my answer may differ in form, so you need to carefully distinguish them before giving your response;
+        - If my solution does not clearly provide an answer or contains garbled content unrelated to the question that affects the final judgment, please return False.
+        
+        Please do not return any other content, only return True or False. True indicates the answers are consistent, False indicates they are inconsistent.
+
 """
     try:
         response = client.chat.completions.create(
@@ -44,52 +46,27 @@ def check_exceeds_scope(solution, limitations):
     Adopt Few-shot examples to improve model judgment accuracy
     """
     if not limitations:
-        return False, "无限制列表，默认不超纲"
+        return False, "null"
 
     # Format limitation list
     limitations_str = "\n".join([f"{i+1}. {rule}" for i, rule in enumerate(limitations)])
 
-    prompt = f"""你是一个严格的逻辑审查员。请判断提供的“解答过程”是否涉及了“限制列表”中的任何内容。
-
-### 限制列表：
-{limitations_str}
-
-### 判定示例（Few-shot）：
-
-示例 1：
-限制列表：1. 出现乘除法； 2. 使用小数
-解答过程：3 + 3 + 3 = 9
-判定：{{"exceeds": false, "reason": "解答中仅使用了加法，未涉及限制列表中的乘除法或小数。"}}
-
-示例 2：
-限制列表：1. 使用方程或字母设未知数； 2. 结果使用分数
-解答过程：设一共有 x 支笔，x - 2 = 8，所以 x = 10。
-判定：{{"exceeds": true, "reason": "违反了规则1：出现了字母 x 和设方程的思维。"}}
-
-示例 3：
-限制列表：1. 出现乘除法； 2. 出现题目中没有的字母
-解答过程：2 * 5 = 10，答：一共10个。
-判定：{{"exceeds": true, "reason": "违反了规则1：解答过程中使用了乘法符号 '*'。"}}
-
-示例 4：
-限制列表：1. 使用负数； 2. 使用绝对值
-解答过程：100 - 90 = 10。
-判定：{{"exceeds": false, "reason": "解答符合要求，未涉及负数或绝对值。"}}
-
-### 待审核任务：
-解答过程：{solution}
-
-请仅返回 JSON 格式：
-{{
-  "exceeds": true/false,
-  "reason": "简述理由，若超纲请指明违反了第几条"
-}}
+    prompt = f"""Please help me check if there are any scope exceedances in my solution process. The possible scope exceedances are listed below.
+            Solution Process: {solution}\n
+            Scope Exceedance List: {limitations}\n
+    
+            Requirements:
+            - Please only return True or False. True indicates that the solution process contains content or methods from the scope exceedance list, and False indicates that it does not.
+            - Please carefully inspect my solution process; any presence of content from the out-of-scope list constitutes a violation.
+            - If my solution fails to provide a clear answer, or contains garbled/irrelevant content that impedes the final judgment, please return True.
+    
+            I emphasize once again: do not return any other content. Only return True or False, as defined above.
 """
     try:
         response = client.chat.completions.create(
             model="gpt-oss:20b",
             messages=[
-                {"role": "system", "content": "你是一个只输出 JSON 格式的自动化合规检查工具。"},
+                {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": prompt}
             ],
             temperature=0,
@@ -98,7 +75,7 @@ def check_exceeds_scope(solution, limitations):
         res = json.loads(response.choices[0].message.content)
         return res.get("exceeds", False), res.get("reason", "")
     except:
-        return True, "判定过程异常，默认设为超纲"
+        return True, "null"
 
 # 1. Load JSON file
 with open(INPUT_FILE, 'r', encoding='utf-8') as f:

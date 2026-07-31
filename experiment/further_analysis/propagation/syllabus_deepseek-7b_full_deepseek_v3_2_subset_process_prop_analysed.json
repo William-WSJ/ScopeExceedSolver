@@ -31,7 +31,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答中出现了字母 a、b 并使用方程求解，属于使用题目中未出现的字母设方程或未知数求解。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 1,\n  \"引导力\": 4,\n  \"正确性\": 8\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 1,\n  \"guidance\": 4,\n  \"correctness\": 8\n}",
     "path_error_type": "Solution Error",
     "propagation_type": "FR"
   },
@@ -67,7 +67,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现字母设方程或未知数，符合限制列表。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -102,7 +102,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程仅使用了数字和算术运算，没有出现题目中没有的字母或设方程求解，符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -141,7 +141,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了题目中没有的字母 A、B 并设方程进行求解。",
-    "raw_model_response": "{\n  \"思路评分\": 3,\n  \"关键点\": 3,\n  \"引导力\": 5,\n  \"正确性\": 5\n}",
+    "raw_model_response": "{\n  \"idea-score\": 3,\n  \"key-points\": 3,\n  \"guidance\": 5,\n  \"correctness\": 5\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "CER"
   },
@@ -177,7 +177,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未使用字母设方程或未知数，符合限制列表。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -212,7 +212,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 x 并设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 1,\n  \"引导力\": 2,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 1,\n  \"guidance\": 2,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "CER"
   },
@@ -248,7 +248,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程中未出现题目中没有的字母，也未使用字母设方程或未知数求解，符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -283,7 +283,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 M 并设方程，使用了题目中没有的字母进行未知数求解。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 4,\n  \"引导力\": 10,\n  \"正确性\": 8\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 4,\n  \"guidance\": 10,\n  \"correctness\": 8\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -319,7 +319,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现题目中没有的字母，也没有设方程或未知数求解，完全符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -354,7 +354,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现字母设方程或未知数，符合限制列表。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -389,7 +389,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现题目中没有的字母或设方程，符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -424,7 +424,7 @@
     "acc": false,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程仅使用了数字和算术运算，没有出现题目中没有的字母或设方程的做法。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 3,\n  \"引导力\": 6,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 3,\n  \"guidance\": 6,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "CER"
   },
@@ -460,7 +460,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了题目中未出现的字母 P 并使用其设方程求解",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 2,\n  \"引导力\": 8,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 2,\n  \"guidance\": 8,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "CER"
   },
@@ -496,7 +496,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现题目中没有的字母设方程或未知数，符合规则。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 0\n}",
     "path_error_type": "Unknown/Correct"
   },
   {
@@ -531,7 +531,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了题目中没有的字母 x 和 y 并设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 9,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 9,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -566,7 +566,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答中出现了字母 x 并设方程求解，使用了题目中未出现的未知数。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -605,7 +605,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则4：出现小数 66.67",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -640,7 +640,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 x 并设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -679,7 +679,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用了字母 D、L 并设方程，出现了题目中未出现的字母",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 2,\n  \"引导力\": 3,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 2,\n  \"guidance\": 3,\n  \"correctness\": 0\n}",
     "path_error_type": "Solution Error",
     "propagation_type": "FR"
   },
@@ -715,7 +715,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现字母设方程或未知数，符合限制列表。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -750,7 +750,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用了字母 x 并设方程，出现了题目中没有的字母进行未知数求解。",
-    "raw_model_response": "{\n  \"思路评分\": 3,\n  \"关键点\": 4,\n  \"引导力\": 7,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 3,\n  \"key-points\": 4,\n  \"guidance\": 7,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -785,7 +785,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用了题目中没有的字母（A、P、L）来设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -820,7 +820,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程中仅使用了数字和基本算术运算，没有出现题目中没有的字母或设未知数的方程，符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 1,\n  \"引导力\": 2,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 1,\n  \"guidance\": 2,\n  \"correctness\": 0\n}",
     "path_error_type": "Solution Error",
     "propagation_type": "FR"
   },
@@ -856,7 +856,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：在解答过程中出现了题目中未出现的字母 A、B、C 并使用它们设立方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 2,\n  \"引导力\": 4,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 2,\n  \"guidance\": 4,\n  \"correctness\": 0\n}",
     "path_error_type": "Logical Incompleteness",
     "propagation_type": "FR"
   },
@@ -892,7 +892,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程中未出现题目中没有的字母，也未使用未知数或设方程，完全符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 3,\n  \"关键点\": 4,\n  \"引导力\": 8,\n  \"正确性\": 9\n}",
+    "raw_model_response": "{\n  \"idea-score\": 3,\n  \"key-points\": 4,\n  \"guidance\": 8,\n  \"correctness\": 9\n}",
     "path_error_type": "Unknown/Correct"
   },
   {
@@ -927,7 +927,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用了题目中未出现的字母（如 m、N）来设方程或未知数求解。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -962,7 +962,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程中未出现题目中没有的字母，也未使用字母设方程或未知数求解，完全符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 3,\n  \"引导力\": 5,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 3,\n  \"guidance\": 5,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -998,7 +998,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中仅使用了题目中出现的字母 甲、乙、丙、丁，没有使用额外的字母或设方程。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 1,\n  \"引导力\": 2,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 1,\n  \"guidance\": 2,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -1037,7 +1037,7 @@
     "acc": false,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 a、b、x 并设方程；违反了规则4：出现了小数 1.5",
-    "raw_model_response": "{\n  \"思路评分\": 3,\n  \"关键点\": 2,\n  \"引导力\": 4,\n  \"正确性\": 2\n}",
+    "raw_model_response": "{\n  \"idea-score\": 3,\n  \"key-points\": 2,\n  \"guidance\": 4,\n  \"correctness\": 2\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -1077,7 +1077,7 @@
     "acc": false,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 x 并设方程；违反了规则2：出现了分数形式（8\\frac{6}{7}）；违反了规则3：使用分式形式表示除法算式；违反了规则4：出现了分数。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 7,\n  \"正确性\": 8\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 7,\n  \"correctness\": 8\n}",
     "path_error_type": "Logical Incompleteness",
     "propagation_type": "CER"
   },
@@ -1117,7 +1117,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2、3、4：出现分数符号、使用分式形式表示除法算式以及出现分数。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 9,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 9,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -1156,7 +1156,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了未在题目中出现的字母设方程；违反了规则3：使用分式形式表示除法算式。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 4,\n  \"引导力\": 9,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 4,\n  \"guidance\": 9,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -1195,7 +1195,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程中未出现任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 2,\n  \"引导力\": 5,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 2,\n  \"guidance\": 5,\n  \"correctness\": 0\n}",
     "path_error_type": "Solution Error",
     "propagation_type": "FR"
   },
@@ -1235,7 +1235,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 2,\n  \"引导力\": 3,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 2,\n  \"guidance\": 3,\n  \"correctness\": 0\n}",
     "path_error_type": "Solution Error",
     "propagation_type": "FR"
   },
@@ -1275,7 +1275,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：在解答过程中使用了字母 m1、m2、m_c 并设立方程，出现了题目中未出现的未知数。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -1314,7 +1314,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未涉及任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 2,\n  \"引导力\": 2,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 2,\n  \"guidance\": 2,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -1353,7 +1353,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了题目中没有的字母（如 N、A）并使用方程式求解。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -1392,7 +1392,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 n 并设方程。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -1431,7 +1431,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程中未出现任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -1470,7 +1470,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答过程中使用了字母 x 并设立方程。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -1509,7 +1509,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现限制列表中的任何内容。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -1548,7 +1548,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未涉及任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -1587,7 +1587,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 3,\n  \"关键点\": 3,\n  \"引导力\": 6,\n  \"正确性\": 5\n}",
+    "raw_model_response": "{\n  \"idea-score\": 3,\n  \"key-points\": 3,\n  \"guidance\": 6,\n  \"correctness\": 5\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -1627,7 +1627,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 4,\n  \"引导力\": 7,\n  \"正确性\": 6\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 4,\n  \"guidance\": 7,\n  \"correctness\": 6\n}",
     "path_error_type": "Unknown/Correct"
   },
   {
@@ -1666,7 +1666,7 @@
     "acc": false,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现限制列表中的任何内容。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 0\n}",
     "path_error_type": "Unknown/Correct"
   },
   {
@@ -1701,7 +1701,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程仅使用了数值运算和已给定的量，没有出现题目中未出现的字母或设未知数的方程，符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -1736,7 +1736,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现题目中没有的字母，也未使用未知数或设方程，完全符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -1775,7 +1775,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则4：出现小数 3.5",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 4,\n  \"引导力\": 8,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 4,\n  \"guidance\": 8,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -1814,7 +1814,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 3,\n  \"引导力\": 5,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 3,\n  \"guidance\": 5,\n  \"correctness\": 0\n}",
     "path_error_type": "Unknown/Correct"
   },
   {
@@ -1853,7 +1853,7 @@
     "acc": false,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 x 并设方程",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 0,\n  \"引导力\": 2,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 0,\n  \"guidance\": 2,\n  \"correctness\": 0\n}",
     "path_error_type": "Logical Incompleteness",
     "propagation_type": "FR"
   },
@@ -1889,7 +1889,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 n 并设方程，使用了题目中未出现的字母进行未知数求解。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -1928,7 +1928,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现限制列表中的任何内容。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -1963,7 +1963,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用了题目中未出现的字母 R、T 来设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 3,\n  \"引导力\": 8,\n  \"正确性\": 2\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 3,\n  \"guidance\": 8,\n  \"correctness\": 2\n}",
     "path_error_type": "Solution Error",
     "propagation_type": "FR"
   },
@@ -1999,7 +1999,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未使用字母设方程或未知数，符合限制列表。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -2038,7 +2038,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程中未出现任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 1,\n  \"引导力\": 4,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 1,\n  \"guidance\": 4,\n  \"correctness\": 0\n}",
     "path_error_type": "Solution Error",
     "propagation_type": "FR"
   },
@@ -2074,7 +2074,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答中使用了题目中没有的字母 A、B、C 并列方程，属于禁止的做法。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -2113,7 +2113,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 n 并设方程",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -2152,7 +2152,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答过程中使用了字母 x 并设方程。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -2187,7 +2187,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答中使用了字母 a 并设方程，出现了题目中没有的字母。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 1,\n  \"引导力\": 2,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 1,\n  \"guidance\": 2,\n  \"correctness\": 0\n}",
     "path_error_type": "Solution Error",
     "propagation_type": "FR"
   },
@@ -2227,7 +2227,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 x、y 并设方程；违反了规则2/3/4：出现了分数形式（1/2、3/2、2/3）",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -2266,7 +2266,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答过程中使用了字母 x 并设方程，出现了题目中没有的字母。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -2301,7 +2301,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答过程中使用了题目中未出现的字母 x、y 并设立方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -2340,7 +2340,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 x 并设方程",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -2379,7 +2379,7 @@
     "acc": false,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2（出现分数形式），规则3（使用分式形式表示除法算式），以及规则4（出现小数）",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 2,\n  \"引导力\": 7,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 2,\n  \"guidance\": 7,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "MER"
   },
@@ -2419,7 +2419,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2、3、4",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -2458,7 +2458,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现字母设方程、分数、分式、小数或负数，符合限制列表。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -2497,7 +2497,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2、3、4：解答中使用了分数形式（\\frac{爸爸}{2} 等）以及除法算式，属于分式表示，且出现了分数。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 4,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 4,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -2536,7 +2536,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答中出现了字母 x 并使用方程求解，属于题目中未出现的字母设方程。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -2575,7 +2575,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 x 并设方程",
-    "raw_model_response": "{\n  \"思路评分\": 0,\n  \"关键点\": 1,\n  \"引导力\": 2,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 0,\n  \"key-points\": 1,\n  \"guidance\": 2,\n  \"correctness\": 0\n}",
     "path_error_type": "Unknown/Correct"
   },
   {
@@ -2614,7 +2614,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程仅使用整数运算，没有出现分数、小数、负数或除法分式，且使用的未知数 x 在题目中已出现，符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -2653,7 +2653,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答中使用了字母 L 并设方程，L 并未出现在题目中。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -2692,7 +2692,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答中使用了字母 A 设未知数，题目中未出现该字母。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -2731,7 +2731,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答过程中使用了字母（如 x、A_n、B_n、C_n）并设立方程，出现了题目中未出现的未知数和方程式。",
-    "raw_model_response": "{\n  \"思路评分\": 3,\n  \"关键点\": 4,\n  \"引导力\": 7,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 3,\n  \"key-points\": 4,\n  \"guidance\": 7,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -2766,7 +2766,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 N 并设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 3,\n  \"引导力\": 8,\n  \"正确性\": 9\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 3,\n  \"guidance\": 8,\n  \"correctness\": 9\n}",
     "path_error_type": "Logical Incompleteness",
     "propagation_type": "FR"
   },
@@ -2802,7 +2802,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答中出现了字母 x、y 并设方程，使用了题目中未出现的未知数。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 8,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 8,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -2837,7 +2837,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用了题目中未出现的字母 v1、v2 并设方程求解",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 0,\n  \"引导力\": 2,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 0,\n  \"guidance\": 2,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -2877,7 +2877,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -2912,7 +2912,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现题目中没有的字母设方程或未知数求解。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 0,\n  \"引导力\": 3,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 0,\n  \"guidance\": 3,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -2948,7 +2948,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 x 并设方程求解",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -2983,7 +2983,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 x 并设方程",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 2,\n  \"引导力\": 4,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 2,\n  \"guidance\": 4,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -3019,7 +3019,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答中使用了题目中未出现的字母 a、b 并以此设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -3058,7 +3058,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现字母设方程、分数、小数、负数等限制内容。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -3097,7 +3097,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答符合要求，未涉及限制列表中的任何内容。",
-    "raw_model_response": "{\n  \"思路评分\": 3,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 8\n}",
+    "raw_model_response": "{\n  \"idea-score\": 3,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 8\n}",
     "path_error_type": "Logical Incompleteness",
     "propagation_type": "FR"
   },
@@ -3133,7 +3133,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 x 并设方程，使用了题目中未出现的未知数。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 8,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 8,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -3168,7 +3168,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 n 并设方程",
-    "raw_model_response": "{\n  \"思路评分\": 3,\n  \"关键点\": 4,\n  \"引导力\": 8,\n  \"正确性\": 9\n}",
+    "raw_model_response": "{\n  \"idea-score\": 3,\n  \"key-points\": 4,\n  \"guidance\": 8,\n  \"correctness\": 9\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -3204,7 +3204,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用了题目中未出现的字母 t、d 并设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -3243,7 +3243,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -3282,7 +3282,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程中未出现题目中没有的字母设方程或未知数，且未使用分数、小数、负数或分式形式的除法。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -3317,7 +3317,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用了题目中未出现的字母 G 和 M 并设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -3352,7 +3352,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答中使用了字母 L 设未知数并构造方程，出现了题目中没有的字母。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 7,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 7,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -3387,7 +3387,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程中未出现题目中没有的字母，也未使用未知数或设方程，完全符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 9,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 9,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -3426,7 +3426,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：在解答过程中出现了题目中未出现的字母（如 a、P）并使用它们设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -3465,7 +3465,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -3504,7 +3504,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程中未出现任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -3539,7 +3539,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程中未出现题目中没有的字母，也未使用字母设方程或未知数求解，符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -3572,7 +3572,7 @@
     "acc": false,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2：出现了题目中没有的字母设方程或未知数求解",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 2,\n  \"引导力\": 3,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 2,\n  \"guidance\": 3,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "MER"
   },
@@ -3607,7 +3607,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2：出现了字母 n 并设方程；违反了规则3：使用了积的变化规律",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -3639,7 +3639,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用了题目中未出现的字母 A、B、C、D 设未知数。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -3673,7 +3673,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：解答过程中使用了乘法（积的变化规律）",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 3,\n  \"引导力\": 5,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 3,\n  \"guidance\": 5,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -3708,7 +3708,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2：出现题目中没有的字母设方程或未知数求解",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 1,\n  \"引导力\": 3,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 1,\n  \"guidance\": 3,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -3741,7 +3741,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答中出现了字母 A 并使用方程式进行求解，属于题目中未出现的字母设方程或未知数求解。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 1,\n  \"引导力\": 4,\n  \"正确性\": 4\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 1,\n  \"guidance\": 4,\n  \"correctness\": 4\n}",
     "path_error_type": "Logical Incompleteness",
     "propagation_type": "FR"
   },
@@ -3776,7 +3776,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：解答过程中使用了积的变化规律（将长宽分别乘以2后再相乘得到新面积）。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -3810,7 +3810,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2：出现了题目中没有的字母设方程的思维。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -3844,7 +3844,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未涉及限制列表中的任何内容。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 3,\n  \"引导力\": 6,\n  \"正确性\": 8\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 3,\n  \"guidance\": 6,\n  \"correctness\": 8\n}",
     "path_error_type": "Solution Error",
     "propagation_type": "FR"
   },
@@ -3879,7 +3879,7 @@
     "acc": false,
     "exceeds_scope": false,
     "exceeds_reason": "",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 1,\n  \"引导力\": 3,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 1,\n  \"guidance\": 3,\n  \"correctness\": 0\n}",
     "path_error_type": "Solution Error",
     "propagation_type": "CER"
   },
@@ -3914,7 +3914,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：解答过程中使用了积的变化规律（乘法与指数运算）来求解问题。",
-    "raw_model_response": "{\n  \"思路评分\": 3,\n  \"关键点\": 3,\n  \"引导力\": 7,\n  \"正确性\": 8\n}",
+    "raw_model_response": "{\n  \"idea-score\": 3,\n  \"key-points\": 3,\n  \"guidance\": 7,\n  \"correctness\": 8\n}",
     "path_error_type": "Logical Incompleteness",
     "propagation_type": "CER"
   },
@@ -3949,7 +3949,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：解答过程中使用了积的变化规律（通过计数 2 与 5 的因子来确定末尾 0 的个数）。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 8,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 8,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -3983,7 +3983,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：解答过程中使用了乘法（积的变化规律），违反了不使用乘法的限制。",
-    "raw_model_response": "{\n  \"思路评分\": 3,\n  \"关键点\": 3,\n  \"引导力\": 7,\n  \"正确性\": 5\n}",
+    "raw_model_response": "{\n  \"idea-score\": 3,\n  \"key-points\": 3,\n  \"guidance\": 7,\n  \"correctness\": 5\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -4018,7 +4018,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用比例的知识求解问题；规则2：出现题目中没有的字母设方程或未知数求解；规则3：使用积的变化规律解题。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 1,\n  \"引导力\": 3,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 1,\n  \"guidance\": 3,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -4053,7 +4053,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2：出现了未在题目中出现的字母 a、b 并设方程；违反了规则3：使用了积的变化规律",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -4087,7 +4087,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2：出现了字母 a、b 并设方程；违反了规则3：使用了积的变化规律",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 0,\n  \"引导力\": 2,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 0,\n  \"guidance\": 2,\n  \"correctness\": 0\n}",
     "path_error_type": "Logical Incompleteness",
     "propagation_type": "FR"
   },
@@ -4120,7 +4120,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了题目中没有的字母 x、y 并设方程求解",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 1,\n  \"引导力\": 4,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 1,\n  \"guidance\": 4,\n  \"correctness\": 0\n}",
     "path_error_type": "Logical Incompleteness",
     "propagation_type": "FR"
   },
@@ -4155,7 +4155,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：使用了积的变化规律（通过 47-41=6 并乘以未知因数求解）。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -4189,7 +4189,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2：出现了题目中没有的字母 x 并设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 1,\n  \"引导力\": 3,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 1,\n  \"guidance\": 3,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -4224,7 +4224,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2：出现了题目中没有的字母 A、B 并设方程",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -4258,7 +4258,7 @@
     "acc": false,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：在求最大/最小乘积时使用了积的变化规律（让两个乘数尽量接近或差距最大）来推导分配方案。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 0,\n  \"引导力\": 2,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 0,\n  \"guidance\": 2,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "CER"
   },
@@ -4293,7 +4293,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用比例的知识求解问题；规则2：出现题目中没有的字母设方程或未知数求解；规则3：使用了积的变化规律解题",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 8,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 8,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -4327,7 +4327,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未涉及任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 4,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 4,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -4361,7 +4361,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用比例的知识求解问题；违反了规则2：出现题目中没有的字母设方程或未知数求解；违反了规则3：使用积的变化规律解题",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -4393,7 +4393,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答中出现了题目中未出现的字母 n 和 C 并使用它们设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 3,\n  \"关键点\": 4,\n  \"引导力\": 7,\n  \"正确性\": 9\n}",
+    "raw_model_response": "{\n  \"idea-score\": 3,\n  \"key-points\": 4,\n  \"guidance\": 7,\n  \"correctness\": 9\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -4426,7 +4426,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 x 并设方程。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -4459,7 +4459,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：使用了商的变化规律解题。",
-    "raw_model_response": "{\n  \"思路评分\": 3,\n  \"关键点\": 3,\n  \"引导力\": 6,\n  \"正确性\": 5\n}",
+    "raw_model_response": "{\n  \"idea-score\": 3,\n  \"key-points\": 3,\n  \"guidance\": 6,\n  \"correctness\": 5\n}",
     "path_error_type": "Logical Incompleteness",
     "propagation_type": "CER"
   },
@@ -4493,7 +4493,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：使用了商的变化规律来推导正确商和余数。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 1,\n  \"引导力\": 2,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 1,\n  \"guidance\": 2,\n  \"correctness\": 0\n}",
     "path_error_type": "Solution Error",
     "propagation_type": "FR"
   },
@@ -4527,7 +4527,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用分数表示除法余数；违反了规则2：使用题目中未出现的字母设方程。",
-    "raw_model_response": "{\n  \"思路评分\": 3,\n  \"关键点\": 3,\n  \"引导力\": 6,\n  \"正确性\": 5\n}",
+    "raw_model_response": "{\n  \"idea-score\": 3,\n  \"key-points\": 3,\n  \"guidance\": 6,\n  \"correctness\": 5\n}",
     "path_error_type": "Solution Error",
     "propagation_type": "FR"
   },
@@ -4562,7 +4562,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2：出现了字母 A、B 并设方程；违反了规则3：使用了积的变化规律",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 2,\n  \"引导力\": 3,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 2,\n  \"guidance\": 3,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -4596,7 +4596,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用了\"10 余 15\"的形式；违反了规则2：引入了题目中未出现的字母 a、b 并设方程；违反了规则3：未使用商的变化规律进行求解。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 1,\n  \"引导力\": 6,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 1,\n  \"guidance\": 6,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -4628,7 +4628,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了题目中没有的字母（如 S_A、S_B、m、n）设方程或未知数求解。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -4661,7 +4661,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2：出现了题目中没有的字母（如 Q、k、m、t、a 等）并设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 1,\n  \"引导力\": 3,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 1,\n  \"guidance\": 3,\n  \"correctness\": 0\n}",
     "path_error_type": "Logical Incompleteness",
     "propagation_type": "FR"
   },
@@ -4695,7 +4695,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：带余数的除法未用小数或分数表示；违反了规则2：出现了题目中没有的字母 a 并设方程/未知数求解。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 0,\n  \"引导力\": 2,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 0,\n  \"guidance\": 2,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -4729,7 +4729,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：使用了商的变化规律解题。",
-    "raw_model_response": "{\n  \"思路评分\": 3,\n  \"关键点\": 3,\n  \"引导力\": 7,\n  \"正确性\": 6\n}",
+    "raw_model_response": "{\n  \"idea-score\": 3,\n  \"key-points\": 3,\n  \"guidance\": 7,\n  \"correctness\": 6\n}",
     "path_error_type": "Logical Incompleteness",
     "propagation_type": "FR"
   },
@@ -4762,7 +4762,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用了字母 x 并设方程，x 并非题目中出现的字母。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -4794,7 +4794,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了题目中没有的字母 a 并用其设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 1,\n  \"引导力\": 4,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 1,\n  \"guidance\": 4,\n  \"correctness\": 0\n}",
     "path_error_type": "Solution Error",
     "propagation_type": "CER"
   },
@@ -4828,7 +4828,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：使用了商的变化规律（如 a² ÷ a = a）来求解。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 0,\n  \"引导力\": 2,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 0,\n  \"guidance\": 2,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -4863,7 +4863,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未涉及任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -4897,7 +4897,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用比例知识求解；违反了规则3：使用积的变化规律",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 9,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 9,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -4929,7 +4929,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程中未出现题目中没有的字母或设未知数，也未使用小数及其相关运算，符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -4961,7 +4961,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现题目中没有的字母设方程，也未使用小数，符合限制。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -4993,7 +4993,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现题目中没有的字母或未知数，也未使用小数及其相关运算，完全符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5025,7 +5025,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 a、b 并设方程",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5059,7 +5059,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2：出现题目中没有的字母设方程或未知数求解；违反了规则3：使用积的变化规律解题",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 0,\n  \"引导力\": 1,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 0,\n  \"guidance\": 1,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -5092,7 +5092,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2：在计算车辆数量时出现了小数（如 4.6、1.5、6.5）并进行了相关运算。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5126,7 +5126,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2：出现了题目中没有的字母 A、B、M 并设方程；违反了规则3：使用了积的变化规律（因式分解）",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5160,7 +5160,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：解答过程中使用了积的变化规律（125×8=1000）",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5194,7 +5194,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5228,7 +5228,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：解答过程中使用了积的变化规律（分配律）",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5262,7 +5262,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：解答过程中使用了积的变化规律（分配律）来展开 298 × 99。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5294,7 +5294,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 a、b 并设方程，题目中未出现这些字母。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 9,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 9,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5326,7 +5326,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现题目中没有的字母，也未使用假设法与小数相关运算。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5358,7 +5358,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答中出现了字母 a 并用其设方程，题目中并未出现任何字母。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 1,\n  \"引导力\": 8,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 1,\n  \"guidance\": 8,\n  \"correctness\": 0\n}",
     "path_error_type": "Solution Error",
     "propagation_type": "FR"
   },
@@ -5391,7 +5391,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中仅使用了题目中已有的字母 甲、乙、丙，且采用消元求解而非假设法，所有运算均为加减法，未违反任何限制规则。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 2,\n  \"引导力\": 4,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 2,\n  \"guidance\": 4,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -5424,7 +5424,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中使用的字母 a、b、c 均出现在题目中，且未采用假设法；所有运算均为标准代数求解，未违反任何限制条款。",
-    "raw_model_response": "{\n  \"思路评分\": 3,\n  \"关键点\": 4,\n  \"引导力\": 8,\n  \"正确性\": 5\n}",
+    "raw_model_response": "{\n  \"idea-score\": 3,\n  \"key-points\": 4,\n  \"guidance\": 8,\n  \"correctness\": 5\n}",
     "path_error_type": "Solution Error",
     "propagation_type": "FR"
   },
@@ -5457,7 +5457,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了题目中没有的字母 P 并设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 8,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 8,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5489,7 +5489,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了题目中没有的字母 x、y 并使用方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5521,7 +5521,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 x, y 并设方程",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5553,7 +5553,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了题目中没有的字母 t 并使用方程进行求解。",
-    "raw_model_response": "{\n  \"思路评分\": 3,\n  \"关键点\": 4,\n  \"引导力\": 8,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 3,\n  \"key-points\": 4,\n  \"guidance\": 8,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5585,7 +5585,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用了题目中未出现的字母（x、y、L_t、L_c）来设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 3,\n  \"关键点\": 5,\n  \"引导力\": 8,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 3,\n  \"key-points\": 5,\n  \"guidance\": 8,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5617,7 +5617,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程中未出现题目中没有的字母设方程，也未使用小数及其相关运算，均符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5649,7 +5649,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了题目中没有的字母 x、y 并使用它们设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5681,7 +5681,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答中使用了字母 a、b 并设方程，出现了题目中没有的未知数。",
-    "raw_model_response": "{\n  \"思路评分\": 0,\n  \"关键点\": 0,\n  \"引导力\": 3,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 0,\n  \"key-points\": 0,\n  \"guidance\": 3,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -5714,7 +5714,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现题目中没有的字母设方程或未知数，也未使用小数及其相关运算，符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5746,7 +5746,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现题目中没有的字母设方程或未知数，也未使用小数及其相关运算。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5778,7 +5778,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答过程中出现了字母（如 x、A、B）并使用了方程式，超出了题目中未出现的字母设方程或未知数求解的限制。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 3,\n  \"引导力\": 5,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 3,\n  \"guidance\": 5,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5810,7 +5810,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程中未出现题目中没有的字母设方程或未知数，也未使用小数及其相关运算，符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 8,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 8,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5842,7 +5842,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现题目中没有的字母设方程或未知数，也未在使用假设法时出现小数及其相关运算。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5874,7 +5874,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程仅使用整数运算，未出现题目中没有的字母设方程，也未使用小数及相关运算，符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5913,7 +5913,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 x 并设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5952,7 +5952,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -5991,7 +5991,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答中使用了字母 b 和 k 设方程，出现了题目中未出现的未知数。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -6030,7 +6030,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用了字母 L_4、L_3、L_2、L_1、L_0 设方程，出现了题目中没有的字母。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -6069,7 +6069,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -6108,7 +6108,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未涉及任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -6147,7 +6147,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -6186,7 +6186,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 a、b 并设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -6225,7 +6225,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 x 并设方程。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -6264,7 +6264,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现限制列表中的任何内容。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -6303,7 +6303,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未涉及任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 2,\n  \"引导力\": 6,\n  \"正确性\": 7\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 2,\n  \"guidance\": 6,\n  \"correctness\": 7\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -6343,7 +6343,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程中未出现任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 1,\n  \"引导力\": 3,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 1,\n  \"guidance\": 3,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -6383,7 +6383,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 3,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 8\n}",
+    "raw_model_response": "{\n  \"idea-score\": 3,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 8\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -6423,7 +6423,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 x 并设方程",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -6462,7 +6462,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程中未出现任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -6501,7 +6501,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则4：解答过程中出现了小数（如 2.666… 和 0.5）。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -6540,7 +6540,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -6579,7 +6579,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现限制列表中的任何内容。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 0,\n  \"引导力\": 0,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 0,\n  \"guidance\": 0,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "CER"
   },
@@ -6619,7 +6619,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -6658,7 +6658,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 0,\n  \"引导力\": 6,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 0,\n  \"guidance\": 6,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -6698,7 +6698,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2、3、4：出现分数形式、使用分式表示除法算式、出现分数。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 4,\n  \"引导力\": 9,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 4,\n  \"guidance\": 9,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -6737,7 +6737,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 x 并设方程。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -6776,7 +6776,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用了字母 n 并设方程，题目中未出现此类字母。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -6815,7 +6815,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中仅使用了整数加法和乘法，没有出现字母设方程、分数、分式、负数或小数。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 8,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 8,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -6850,7 +6850,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答中出现了字母 x、y 并使用它们设方程求解，超出了题目中未出现的字母。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -6885,7 +6885,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用了题目中未出现的字母 O、B 并设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 5,\n  \"引导力\": 9,\n  \"正确性\": 5\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 5,\n  \"guidance\": 9,\n  \"correctness\": 5\n}",
     "path_error_type": "Solution Error",
     "propagation_type": "FR"
   },
@@ -6921,7 +6921,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未使用题目中未出现的字母设方程或未知数，符合规则。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -6956,7 +6956,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程仅使用算术运算，没有出现题目中没有的字母设方程或未知数求解。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -6991,7 +6991,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答过程中出现了字母 x 并设方程，使用了题目中未出现的未知数。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 1,\n  \"引导力\": 3,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 1,\n  \"guidance\": 3,\n  \"correctness\": 0\n}",
     "path_error_type": "Solution Error",
     "propagation_type": "FR"
   },
@@ -7027,7 +7027,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 x 并设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 3,\n  \"引导力\": 7,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 3,\n  \"guidance\": 7,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -7062,7 +7062,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 x 和 b 并设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -7096,7 +7096,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用比例知识求解；规则2：出现题目中没有的字母 a、b 并设方程；规则3：使用积的变化规律解题。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 8,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 8,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -7130,7 +7130,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：使用了积的变化规律解题",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 0,\n  \"引导力\": 2,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 0,\n  \"guidance\": 2,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "CER"
   },
@@ -7165,7 +7165,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：使用了积的变化规律",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -7199,7 +7199,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用比例的知识求解问题",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -7233,7 +7233,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程未涉及任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -7267,7 +7267,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未涉及任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 8,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 8,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -7301,7 +7301,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用比例知识求解问题；违反了规则3：使用积的变化规律解题",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -7335,7 +7335,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用比例的知识求解问题",
-    "raw_model_response": "{\n  \"思路评分\": 3,\n  \"关键点\": 4,\n  \"引导力\": 7,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 3,\n  \"key-points\": 4,\n  \"guidance\": 7,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -7369,7 +7369,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用比例知识求解问题；违反了规则2：出现题目中没有的字母设方程或未知数求解。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -7403,7 +7403,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用比例的知识求解问题。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -7437,7 +7437,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用比例知识求解问题；违反了规则3：使用积的变化规律解题",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 2,\n  \"引导力\": 4,\n  \"正确性\": 5\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 2,\n  \"guidance\": 4,\n  \"correctness\": 5\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -7472,7 +7472,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2：出现题目中没有的字母设方程的思维。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 3,\n  \"引导力\": 7,\n  \"正确性\": 4\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 3,\n  \"guidance\": 7,\n  \"correctness\": 4\n}",
     "path_error_type": "Logical Incompleteness",
     "propagation_type": "FR"
   },
@@ -7506,7 +7506,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答未涉及任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 4,\n  \"正确性\": 5\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 4,\n  \"correctness\": 5\n}",
     "path_error_type": "Logical Incompleteness",
     "propagation_type": "CER"
   },
@@ -7540,7 +7540,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：使用了商不变性质（商的变化规律）",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -7573,7 +7573,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未涉及限制列表中的任何内容。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -7606,7 +7606,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现除法余数的十进制或分数表示，也没有使用题目中未出现的字母设方程或未知数，且未使用商的变化规律。",
-    "raw_model_response": "{\n  \"思路评分\": 3,\n  \"关键点\": 3,\n  \"引导力\": 5,\n  \"正确性\": 5\n}",
+    "raw_model_response": "{\n  \"idea-score\": 3,\n  \"key-points\": 3,\n  \"guidance\": 5,\n  \"correctness\": 5\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "CER"
   },
@@ -7640,7 +7640,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2：出现了题目中没有的字母 a 并设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -7673,7 +7673,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：使用了商的变化规律（将 (A×30)/(B×30) 简化为 A/B）",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -7706,7 +7706,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：解答过程中使用了商的变化规律来求解。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 1,\n  \"引导力\": 5,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 1,\n  \"guidance\": 5,\n  \"correctness\": 0\n}",
     "path_error_type": "Solution Error",
     "propagation_type": "FR"
   },
@@ -7740,7 +7740,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：未使用商的变化规律解题",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -7773,7 +7773,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2：出现题目中没有的字母设方程或未知数求解；违反了规则3：使用商的变化规律解题",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -7806,7 +7806,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2：出现题目中没有的字母 k 并设方程",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -7839,7 +7839,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用小数表示带余数的除法；违反了规则3：使用商的变化规律解题。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -7872,7 +7872,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2：出现了字母 q 和 r 并设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 2,\n  \"引导力\": 3,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 2,\n  \"guidance\": 3,\n  \"correctness\": 0\n}",
     "path_error_type": "Logical Incompleteness",
     "propagation_type": "FR"
   },
@@ -7906,7 +7906,7 @@
     "acc": false,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：使用了商的变化规律来推导答案",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 9,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 9,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -7939,7 +7939,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：解答过程中使用了商不变规律（商的变化规律）来推导答案。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 3,\n  \"引导力\": 6,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 3,\n  \"guidance\": 6,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -7972,7 +7972,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2：出现了字母 a、b 并设方程；违反了规则3：使用了商的变化规律（a = 8b）",
-    "raw_model_response": "{\n  \"思路评分\": 3,\n  \"关键点\": 2,\n  \"引导力\": 4,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 3,\n  \"key-points\": 2,\n  \"guidance\": 4,\n  \"correctness\": 0\n}",
     "path_error_type": "Logical Incompleteness",
     "propagation_type": "FR"
   },
@@ -8006,7 +8006,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：使用了商不变的规律",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 4,\n  \"引导力\": 8,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 4,\n  \"guidance\": 8,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -8039,7 +8039,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：解答过程中使用了商的变化规律（通过乘以3调整除数以保持商不变）。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -8072,7 +8072,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程未涉及任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -8105,7 +8105,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未涉及任何限制列表中的内容。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -8138,7 +8138,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2：使用了未在题目中出现的字母 N 并设方程；违反了规则3：使用了商的变化规律来求解。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 1,\n  \"引导力\": 2,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 1,\n  \"guidance\": 2,\n  \"correctness\": 0\n}",
     "path_error_type": "Solution Error",
     "propagation_type": "FR"
   },
@@ -8172,7 +8172,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则3：使用了商的变化规律来求解问题。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 4,\n  \"引导力\": 9,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 4,\n  \"guidance\": 9,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -8205,7 +8205,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则2：出现题目中没有的字母设方程；违反了规则3：使用了商的变化规律",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 3,\n  \"引导力\": 3,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 3,\n  \"guidance\": 3,\n  \"correctness\": 0\n}",
     "path_error_type": "Solution Error",
     "propagation_type": "CER"
   },
@@ -8238,7 +8238,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现题目中没有的字母设方程或未知数，也未使用小数及其相关运算。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 4,\n  \"引导力\": 8,\n  \"正确性\": 8\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 4,\n  \"guidance\": 8,\n  \"correctness\": 8\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "CER"
   },
@@ -8271,7 +8271,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现题目中没有的字母设方程或未知数，也未使用小数及其相关运算，符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -8303,7 +8303,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答中使用了字母 x、y 设未知数，且这些字母不在题目中出现。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -8335,7 +8335,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用了字母 x、y 设方程求解，出现了题目中没有的字母。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 0,\n  \"引导力\": 2,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 0,\n  \"guidance\": 2,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -8368,7 +8368,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现题目中没有的字母设方程或未知数，也未使用小数及其相关运算，符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -8400,7 +8400,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答中出现了字母 a、b、c、d 并设立方程进行求解，属于使用题目中没有的字母设方程或未知数求解。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -8432,7 +8432,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 x、y 并设方程，超出题目范围。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 0,\n  \"引导力\": 2,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 0,\n  \"guidance\": 2,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -8465,7 +8465,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答过程中使用了字母 x、y 设未知数，出现了题目中没有的字母并进行方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 1,\n  \"引导力\": 2,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 1,\n  \"guidance\": 2,\n  \"correctness\": 0\n}",
     "path_error_type": "Solution Error",
     "propagation_type": "FR"
   },
@@ -8498,7 +8498,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了题目中没有的字母 x、y、z 并设方程；违反了规则2：使用了小数 19.5、20.6 等相关运算。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 8,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 8,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -8530,7 +8530,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现字母设方程，也未使用小数，符合限制列表。",
-    "raw_model_response": "{\n  \"思路评分\": 3,\n  \"关键点\": 5,\n  \"引导力\": 8,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 3,\n  \"key-points\": 5,\n  \"guidance\": 8,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -8562,7 +8562,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程仅使用整数运算，没有出现题目中没有的字母设方程，也没有使用小数及其相关运算，符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -8594,7 +8594,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现题目中没有的字母设方程或未知数，也未使用小数及其相关运算。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 3,\n  \"引导力\": 4,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 3,\n  \"guidance\": 4,\n  \"correctness\": 0\n}",
     "path_error_type": "Logical Incompleteness",
     "propagation_type": "FR"
   },
@@ -8627,7 +8627,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 x、y 并设方程；违反了规则2：使用假设法时出现小数及相关运算。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 4,\n  \"引导力\": 8,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 4,\n  \"guidance\": 8,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -8659,7 +8659,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现限制列表中的任何内容。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -8691,7 +8691,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答过程仅使用整数运算，未出现题目中没有的字母设方程，也未使用小数，符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 2,\n  \"引导力\": 3,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 2,\n  \"guidance\": 3,\n  \"correctness\": 0\n}",
     "path_error_type": "Logical Incompleteness",
     "propagation_type": "MER"
   },
@@ -8724,7 +8724,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了题目中没有的字母设未知数（x、y）",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 0,\n  \"引导力\": 0,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 0,\n  \"guidance\": 0,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -8757,7 +8757,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用了字母 x 并设方程，出现了题目中没有的字母。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 2,\n  \"引导力\": 3,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 2,\n  \"guidance\": 3,\n  \"correctness\": 0\n}",
     "path_error_type": "Solution Error",
     "propagation_type": "FR"
   },
@@ -8790,7 +8790,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答中出现了题目中未出现的字母 x、y、z 并使用它们设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -8822,7 +8822,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用了题目中未出现的字母 a、b 设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -8854,7 +8854,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：使用了题目中未出现的字母 x、y 设方程；违反了规则2：在假设法中出现了小数 13.67 及其相关运算。",
-    "raw_model_response": "{\n  \"思路评分\": 1,\n  \"关键点\": 0,\n  \"引导力\": 4,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 1,\n  \"key-points\": 0,\n  \"guidance\": 4,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -8887,7 +8887,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：在推理中使用了字母 M、N 进行变量化推导，题目中并未出现这些字母。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 4,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 4,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -8919,7 +8919,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了题目中没有的字母 x、y 并使用它们设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 3,\n  \"引导力\": 6,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 3,\n  \"guidance\": 6,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -8952,7 +8952,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了题目中没有的字母 a、b 并设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 9,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 9,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -8984,7 +8984,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现题目中没有的字母设方程或未知数，也未使用小数及其相关运算，符合限制列表。",
-    "raw_model_response": "{\n  \"思路评分\": 3,\n  \"关键点\": 2,\n  \"引导力\": 4,\n  \"正确性\": 8\n}",
+    "raw_model_response": "{\n  \"idea-score\": 3,\n  \"key-points\": 2,\n  \"guidance\": 4,\n  \"correctness\": 8\n}",
     "path_error_type": "Unknown/Correct"
   },
   {
@@ -9016,7 +9016,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了题目中没有的字母 x、y 并使用它们设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -9048,7 +9048,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 x、y、z、S 并设方程求解，未在题目中出现",
-    "raw_model_response": "{\n  \"思路评分\": 2,\n  \"关键点\": 2,\n  \"引导力\": 7,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 2,\n  \"key-points\": 2,\n  \"guidance\": 7,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -9081,7 +9081,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现题目中没有的字母设方程，也未使用小数及相关运算。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -9113,7 +9113,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现限制列表中的字母设方程或未知数，也未使用小数及其相关运算。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -9145,7 +9145,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现题目中没有的字母设方程，也未使用小数，符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -9177,7 +9177,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现题目中没有的字母设方程，也未使用小数及相关运算，符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -9209,7 +9209,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答中出现了题目中未出现的字母 x、y 并使用它们设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -9241,7 +9241,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现限制列表中的字母设方程或未知数，也未使用小数及相关运算。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 8,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 8,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -9273,7 +9273,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 x、y 并设方程",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -9305,7 +9305,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答中出现了题目中没有的字母 x、y 并使用它们设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -9337,7 +9337,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现字母设方程，也未使用小数，符合限制列表要求。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 4,\n  \"引导力\": 9,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 4,\n  \"guidance\": 9,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -9369,7 +9369,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：解答过程中使用了字母 m、n、a 等未在题目中出现的未知数来设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 0,\n  \"关键点\": 0,\n  \"引导力\": 0,\n  \"正确性\": 0\n}",
+    "raw_model_response": "{\n  \"idea-score\": 0,\n  \"key-points\": 0,\n  \"guidance\": 0,\n  \"correctness\": 0\n}",
     "path_error_type": "Analysis Error",
     "propagation_type": "FR"
   },
@@ -9402,7 +9402,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了题目中没有的字母 x 并使用方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -9434,7 +9434,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现题目中没有的字母设方程，也未使用小数及其相关运算，符合限制列表。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -9466,7 +9466,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现题目中没有的字母设方程，也未使用小数及相关运算。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -9498,7 +9498,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 x、y、a 并设方程求解。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -9530,7 +9530,7 @@
     "acc": true,
     "exceeds_scope": true,
     "exceeds_reason": "违反了规则1：出现了字母 t 并设方程，使用了题目中未出现的未知数进行求解。",
-    "raw_model_response": "{\n  \"思路评分\": 4,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 4,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   },
   {
@@ -9562,7 +9562,7 @@
     "acc": true,
     "exceeds_scope": false,
     "exceeds_reason": "解答中未出现题目中没有的字母设方程，也未使用小数，符合限制列表。",
-    "raw_model_response": "{\n  \"思路评分\": 5,\n  \"关键点\": 5,\n  \"引导力\": 10,\n  \"正确性\": 10\n}",
+    "raw_model_response": "{\n  \"idea-score\": 5,\n  \"key-points\": 5,\n  \"guidance\": 10,\n  \"correctness\": 10\n}",
     "path_error_type": "Correct"
   }
 ]

@@ -3,7 +3,7 @@ from langchain_core.prompts import PromptTemplate
 direct_answer_prompt = PromptTemplate(
     input_variable=["question"],
     template="""
-        请解答下列问题：
+        Please answer the following questions:
         {question}
     """
 )
@@ -11,9 +11,9 @@ direct_answer_prompt = PromptTemplate(
 direct_answer_with_limitations_prompt = PromptTemplate(
     input_variable=["question", "limitations"],
     template="""
-        请解答下列问题：
+        Please answer the following questions:
         {question}\n
-        你的解答过程中严禁出现以下内容或方法：
+        Your solution process strictly prohibits the following content or methods:
         {limitations}
     """
 )
@@ -21,88 +21,91 @@ direct_answer_with_limitations_prompt = PromptTemplate(
 generate_idea_prompt = PromptTemplate(
     input_variable=["question", "idea"],
     template="""
-        请根据我的解题思路解决以下问题：
+        Please answer the following questions based on my problem-solving path:
         {question}\n
-        我的解题思路如下：
+        My solution path is as follows:
         {idea}\n
-        请注意，如果我的解题思路有明显的错误，请纠正后再解答。
+        Note that if there is a significant error in my solution path, please correct it before answering.
     """
 )
 
 generate_idea_with_limitations_prompt = PromptTemplate(
     input_variable=["question", "idea", "limitations"],
     template="""
-        请根据我的解题思路解决以下问题：
+        Please answer the following questions based on my problem-solving path:
         {question}\n
-        我的解题思路如下：
+        My solution path is as follows:
         {idea}\n
-        你的解答过程中严禁出现以下内容或方法：
+        Your solution process strictly prohibits the following content or methods:
         {limitations}\n
-        请注意，如果我的解题思路有明显的错误，请纠正后再解答。
+        Note that if there is a significant error in my solution path, please correct it before answering.
     """
 )
 
 answer_check_prompt = PromptTemplate(
     input_variable=["question", "answer", "solution"],
     template="""
-        请帮我判断这个问题的答案是否与我给出的答案一致
+        Please help me determine if the answer to this question is consistent with the answer I provided.
 
-        问题：{question}\n
-        正确答案：{answer}\n
-        我的解答：{solution}
+        Question: {question}\n
+        Correct Answer: {answer}\n
+        My Answer: {solution}
 
-        注意：
-        - 正确答案和我的答案可能在形式上不一样，你需要仔细辨别后再给出回答；
-        - 如果我的解答没有明确给出答案或者解答中出现乱码等与题目无关的内容且影响最终判断，则返回False。
-        请不要返回任何其他内容，只返回True或者False即可。True表示答案一致，False表示答案不一致。
+        Note:
+        - The correct answer and my answer may differ in form, so you need to carefully distinguish them before giving your response;
+        - If my solution does not clearly provide an answer or contains garbled content unrelated to the question that affects the final judgment, please return False.
+        
+        Please do not return any other content, only return True or False. True indicates the answers are consistent, False indicates they are inconsistent.
     """
 )
 
 exceeds_scope_check_prompt = PromptTemplate(
     input_variables=["solution", "limitations"],
     template="""
-        请帮我检查一下我的解答过程中是否出现了超纲现象，可能出现的超纲现象我都写在列表中了。
-        解答过程：{solution}\n
-        超纲列表：{limitations}\n
+        Please help me check if there are any scope exceedances in my solution process. The possible scope exceedances are listed below.
+        Solution Process: {solution}\n
+        Scope Exceedance List: {limitations}\n
 
-        要求：
-        - 请只返回True和False，True表示解答过程中出现了超纲列表的内容或方法，False表示没有出现。
-        - 请仔细检查我的解答过程，但凡出现一点超纲列表中的内容都算超纲。
-        - 如果我的解答没有明确给出答案或者解答中出现乱码等与题目无关的内容且影响最终判断，则返回True。
+        Requirements:
+        - Please only return True or False. True indicates that the solution process contains content or methods from the scope exceedance list, and False indicates that it does not.
+        - Please carefully inspect my solution process; any presence of content from the out-of-scope list constitutes a violation.
+        - If my solution fails to provide a clear answer, or contains garbled/irrelevant content that impedes the final judgment, please return True.
 
-        再三强调，不要返回任何其他内容，只返回True或False即可，True和False的定义在上面有说明。
+        I emphasize once again: do not return any other content. Only return True or False, as defined above.
     """
 )
 
 idea_checklist = PromptTemplate(
-    input_variables=["question", "idea", "solution"],
+    input_variables=["question", "idea", "acc", "solution"],
     template="""
-        问题描述：{question}\n
-        【解题思路开始】\n
-        {idea}\n
-        【解题思路结束】\n
-        【完整解答开始】\n
-        {solution}\n
-        【完整解答结束】\n
-        请依次完成对解题思路的得分评估：
-        思路评估（0-5分）：从【逻辑完整性】【步骤连贯性】【表述清晰度】三维度打分
-        关键点覆盖（0-5分）：判断是否触及核心公式/定理/解题突破口
-        引导有效性（0-10分）：评估思路对构建解答的路径指引程度,不需要考虑正确性，考虑引导性即可 
-        请严格返回JSON字符串,包含三个属性："思路评分":n,"关键点":n,"引导力":n，禁止任何额外内容
-    """
+        You shall act as an extremely rigorous expert in mathematics education assessment. Please conduct an in-depth evaluation of the Problem-Solving Thought Process (thought) by integrating the [Question], the provided [Full Solution], and its [Correctness Label].\n
+        Evaluation Benchmarks:\n
+        Question: {question} \n
+        Full Solution: {solution} \n
+        Solution Correctness: {acc} \n
+        Thought Process to Be Evaluated: {idea} \n
+        Output Requirements \n
+        Return scoring results in JSON format. No additional text is permitted. The specified format is shown below: \n
+        {\n
+        ``Idea Score": integer (0-5),\n
+        ``Key Points": integer (0-5),\n
+        ``Guidance Ability": integer (0-10),\n
+        ``Accuracy": integer (0-10)\n
+        }\n
+        """
 )
 
 # generate_idea_with_limitations_and_knowledge_prompt = PromptTemplate(
 #     input_variable=["question", "idea", "limitations", "knowledge"],
 #     template="""
-#         请根据我的解题思路以及知识库中的解题模板解决以下问题：
+#         Please solve the following problem based on my solution strategy and the solution templates in the knowledge base:
 #         {question}\n
-#         我的解题思路如下：
+#         My solution strategy is as follows:
 #         {idea}\n
-#         知识库模板如下：
+#         The knowledge base template is as follows:
 #         {knowledge}\n
-#         你的解答过程中严禁出现以下内容或方法：
+#         Your solution process strictly prohibits the following content or methods:
 #         {limitations}\n
-#         请注意，如果我的解题思路有明显的错误，请纠正后再解答。
+#         Note that if there is a significant error in my solution strategy, please correct it before answering.
 #     """
 # )

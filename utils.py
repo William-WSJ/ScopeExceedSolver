@@ -32,11 +32,11 @@ def write_checkpoint(mode, count, correct, relevant):
 def convert_to_jsonl(input_file, output_file):
     def prepare_content(data):
         content_template = (
-            "请根据我的解题思路解决以下问题：\n"
+            "Please answer the following questions based on my problem-solving path:\n"
             "{question}\n"
-            "我的解题思路如下：\n"
+            "My solution path is as follows:\n"
             "{idea}\n"
-            "请注意，如果我的解题思路有明显的错误，请纠正后再解答。"
+            "Note that if there is a significant error in my solution path, please correct it before answering."
         )
 
         # Merge list elements into a single string.
